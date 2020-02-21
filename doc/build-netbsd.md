@@ -2,7 +2,7 @@ NetBSD build guide
 ======================
 (updated for NetBSD 8.0)
 
-This guide describes how to build qtumd and command-line utilities on NetBSD.
+This guide describes how to build bcsd and command-line utilities on NetBSD.
 
 This guide does not contain instructions for building the GUI.
 
@@ -23,7 +23,7 @@ pkg-config
 python37
 gmp
 
-git clone https://github.com/qtumproject/qtum --recursive
+git clone https://github.com/Blockchain-Solutions-BCS/bcs --recursive
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -48,7 +48,7 @@ from the root of the repository. Then set `BDB_PREFIX` for the next section:
 export BDB_PREFIX="$PWD/db4"
 ```
 
-### Building Qtum Core
+### Building BCS Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 

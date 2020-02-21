@@ -72,6 +72,8 @@ void WalletController::closeWallet(WalletModel* wallet_model, QWidget* parent)
     box.setInformativeText(tr("Closing the wallet for too long can result in having to resync the entire chain if pruning is enabled."));
     box.setStandardButtons(QMessageBox::Yes|QMessageBox::Cancel);
     box.setDefaultButton(QMessageBox::Yes);
+	box.setButtonText(QMessageBox::Yes, tr("Yes"));
+	box.setButtonText(QMessageBox::Cancel, tr("Cancel"));
     if (box.exec() != QMessageBox::Yes) return;
 
     // First remove wallet from node.

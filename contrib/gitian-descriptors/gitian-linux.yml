@@ -1,5 +1,5 @@
 ---
-name: "qtum-linux-0.18"
+name: "bcs-linux-0.18"
 enable_cache: true
 suites:
 - "bionic"
@@ -37,18 +37,18 @@ packages:
 - "libmicrohttpd-dev"
 - "libminiupnpc-dev"
 remotes:
-- "url": "https://github.com/qtumproject/qtum.git"
-  "dir": "qtum"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
-  "dir": "cpp-eth-qtum"
+- "url": "https://github.com/Blockchain-Solutions-BCS/bcs.git"
+  "dir": "bcs"
+- "url": "https://github.com/Blockchain-Solutions-BCS/cpp-eth-bcs.git"
+  "dir": "cpp-eth-bcs"
 files: []
 script: |
   set -e -o pipefail
 
   #this is a hack since gitian has no natural support for submodules
   #make sure this file exists... 
-  cp -r cpp-eth-qtum/* qtum/src/cpp-ethereum
-  cat qtum/src/cpp-ethereum/utils/libscrypt/b64.c 
+  cp -r cpp-eth-bcs/* bcs/src/cpp-ethereum
+  cat bcs/src/cpp-ethereum/utils/libscrypt/b64.c 
 
   WRAP_DIR=$HOME/wrapped
   HOSTS="i686-pc-linux-gnu x86_64-linux-gnu arm-linux-gnueabihf aarch64-linux-gnu riscv64-linux-gnu"
@@ -134,7 +134,7 @@ script: |
   chmod +x ${WRAP_DIR}/${prog}
   done
 
-  cd qtum
+  cd bcs
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -156,13 +156,13 @@ script: |
   ./autogen.sh
   CONFIG_SITE=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`/share/config.site ./configure --prefix=/
   make V=1 dist
-  SOURCEDIST=`echo qtum-*.tar.gz`
+  SOURCEDIST=`echo bcs-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find qtum-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find bcs-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   popd
 
   # Workaround for tarball not building with the bare tag version (prep)

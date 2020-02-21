@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>935</width>
-    <height>589</height>
+    <width>1135</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -665,7 +665,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QtumPushButton" name="addButton">
+         <widget class="BCSPushButton" name="addButton">
           <property name="toolTip">
            <string>Send to multiple recipients at once</string>
           </property>
@@ -693,8 +693,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>873</width>
-           <height>68</height>
+           <width>1073</width>
+           <height>72</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -1209,9 +1209,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QtumPushButton</class>
+   <class>BCSPushButton</class>
    <extends>QPushButton</extends>
-   <header>qt/qtumpushbutton.h</header>
+   <header>qt/bcspushbutton.h</header>
   </customwidget>
  </customwidgets>
  <resources>

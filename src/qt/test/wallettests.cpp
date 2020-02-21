@@ -62,6 +62,7 @@ uint256 SendCoins(CWallet& wallet, SendCoinsDialog& sendCoinsDialog, const CTxDe
     entry->findChild<QValidatedLineEdit*>("payTo")->setText(QString::fromStdString(EncodeDestination(address)));
     entry->findChild<BitcoinAmountField*>("payAmount")->setValue(amount);
     sendCoinsDialog.findChild<QFrame*>("frameFee")
+        ->findChild<QFrame*>("frameFeeSelection")
         ->findChild<QCheckBox*>("optInRBF")
         ->setCheckState(rbf ? Qt::Checked : Qt::Unchecked);
     uint256 txid;
@@ -216,7 +217,7 @@ void TestGUI()
             QString paymentText = rlist->toPlainText();
             QStringList paymentTextList = paymentText.split('\n');
             QCOMPARE(paymentTextList.at(0), QString("Payment information").toUpper());
-            QVERIFY(paymentTextList.at(2).indexOf(QString("URI: qtum:")) != -1);
+            QVERIFY(paymentTextList.at(2).indexOf(QString("URI: bcs:")) != -1);
             QVERIFY(paymentTextList.at(3).indexOf(QString("Address:")) != -1);
             QCOMPARE(paymentTextList.at(4), QString("Amount: 0.00000001 ") + QString::fromStdString(CURRENCY_UNIT));
             QCOMPARE(paymentTextList.at(5), QString("Label: TEST_LABEL_1"));

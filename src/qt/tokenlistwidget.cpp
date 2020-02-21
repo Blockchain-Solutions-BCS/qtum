@@ -9,8 +9,15 @@
 #include <qt/walletmodel.h>
 #include <qt/bitcoinunits.h>
 
+#include <qt/editaddressdialog.h>
+#include <qt/receiverequestdialog.h>
+
+#include <QRegularExpressionValidator>
+#include <QMessageBox>
+
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
+
 
 #include <QObject>
 

@@ -7,7 +7,7 @@
 from test_framework.messages import CMerkleBlock, FromHex, ToHex
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, connect_nodes, sync_blocks
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 
 class MerkleBlockTest(BitcoinTestFramework):
     def set_test_params(self):

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the Partially Signed Transaction RPCs.
@@ -8,7 +10,7 @@
 from decimal import Decimal
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error, connect_nodes_bi, disconnect_nodes, find_output, sync_blocks
-from test_framework.qtum import convert_btc_bech32_address_to_qtum
+from test_framework.bcs import convert_btc_bech32_address_to_bcs
 
 import json
 import os
@@ -257,7 +259,7 @@ class PSBTTest(BitcoinTestFramework):
         for creator in creators:
             new_outputs = {}
             for k in creator['outputs']:
-                new_key = convert_btc_bech32_address_to_qtum(list(k.keys())[0])
+                new_key = convert_btc_bech32_address_to_bcs(list(k.keys())[0])
                 new_value = list(k.values())[0]
                 new_outputs[new_key] = new_value
             creator['outputs'] = new_outputs

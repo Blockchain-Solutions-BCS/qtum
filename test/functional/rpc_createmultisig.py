@@ -5,7 +5,7 @@
 """Test multisig RPCs"""
 
 from test_framework.test_framework import BitcoinTestFramework
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.bcsconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
 from test_framework.util import (
     assert_raises_rpc_error,
     assert_equal,

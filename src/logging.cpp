@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -42,9 +44,9 @@ bool BCLog::Logger::OpenDebugLog()
     std::lock_guard<std::mutex> scoped_lock(m_file_mutex);
 
     assert(m_fileout == nullptr);
-    assert(m_fileoutVM == nullptr); // qtum
+    assert(m_fileoutVM == nullptr); // bcs
     assert(!m_file_path.empty());
-    assert(!m_file_pathVM.empty()); // qtum
+    assert(!m_file_pathVM.empty()); // bcs
 
     m_fileout = fsbridge::fopen(m_file_path, "a");
     m_fileoutVM = fsbridge::fopen(m_file_pathVM, "a");
@@ -57,7 +59,7 @@ bool BCLog::Logger::OpenDebugLog()
         setbuf(m_fileout, nullptr); // unbuffered
     }
 
-    ///////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////// // bcs
     if (m_fileoutVM) {
         setbuf(m_fileoutVM, nullptr); // unbuffered
     }
@@ -239,7 +241,7 @@ void BCLog::Logger::LogPrintStr(const std::string &str, bool useVMLog)
     if (m_print_to_file) {
         std::lock_guard<std::mutex> scoped_lock(m_file_mutex);
 
-        //////////////////////////////// // qtum
+        //////////////////////////////// // bcs
         FILE* file = m_fileout;
         if(useVMLog){
             file = m_fileoutVM;

@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -14,7 +16,7 @@ extern unsigned int dgpMaxBlockSerSize;
 /** The maximum allowed weight for a block, see BIP 141 (network rule) */
 extern unsigned int dgpMaxBlockWeight;
 
-extern unsigned int dgpMaxBlockSize; // qtum
+extern unsigned int dgpMaxBlockSize; // bcs
 
 /** The maximum allowed number of signature check operations in a block (network rule) */
 extern int64_t dgpMaxBlockSigOps;

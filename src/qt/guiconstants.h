@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -47,19 +49,19 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Qtum"
-#define QAPP_ORG_DOMAIN "qtum.org"
-#define QAPP_APP_NAME_DEFAULT "Qtum-Qt"
-#define QAPP_APP_NAME_TESTNET "Qtum-Qt-testnet"
-#define QAPP_APP_NAME_REGTEST "Qtum-Qt-regtest"
+#define QAPP_ORG_NAME "BCS"
+#define QAPP_ORG_DOMAIN "bcschain.org"
+#define QAPP_APP_NAME_DEFAULT "BCS-Qt"
+#define QAPP_APP_NAME_TESTNET "BCS-Qt-testnet"
+#define QAPP_APP_NAME_REGTEST "BCS-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};
 
-/* Mainnet qtum explorer uri */
-static const QString QTUM_INFO_MAINNET = "<a href='https://qtum.info/%1/%2'>%2</a>";
+/* Mainnet bcs explorer uri */
+static const QString BCS_INFO_MAINNET = "<a href='https://bcschain.info/%1/%2'>%2</a>";
 
-/* Testnet qtum explorer uri */
-static const QString QTUM_INFO_TESTNET = "<a href='https://testnet.qtum.info/%1/%2'>%2</a>";
+/* Testnet bcs explorer uri */
+static const QString BCS_INFO_TESTNET = "<a href='https://testnet.bcschain.info/%1/%2'>%2</a>";
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

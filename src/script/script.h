@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -344,7 +346,7 @@ public:
         return serialize(m_value);
     }
 
-    ///////////////////////////////// qtum
+    ///////////////////////////////// bcs
     static uint64_t vch_to_uint64(const std::vector<unsigned char>& vch)
     {
         if (vch.size() > 8) {
@@ -592,7 +594,7 @@ public:
     unsigned int GetSigOpCount(const CScript& scriptSig) const;
 
     bool IsPayToScriptHash() const;
-    ///////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////// // bcs
     bool IsPayToPubkey() const;
     bool IsPayToPubkeyHash() const;
     /////////////////////////////////////////////////
@@ -616,7 +618,7 @@ public:
         return (size() > 0 && *begin() == OP_RETURN) || (size() > MAX_SCRIPT_SIZE);
     }
 
-    ///////////////////////////////////////// qtum
+    ///////////////////////////////////////// bcs
     bool HasOpCreate() const
     {
         return Find(OP_CREATE) == 1;

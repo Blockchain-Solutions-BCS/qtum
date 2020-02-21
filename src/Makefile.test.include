@@ -1,4 +1,6 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -29,11 +31,11 @@ FUZZ_TARGETS = \
 if ENABLE_FUZZ
 noinst_PROGRAMS += $(FUZZ_TARGETS:=)
 else
-bin_PROGRAMS += test/test_qtum
+bin_PROGRAMS += test/test_bcs
 endif
 
 TEST_SRCDIR = test
-TEST_BINARY=test/test_qtum$(EXEEXT)
+TEST_BINARY=test/test_bcs$(EXEEXT)
 
 JSON_TEST_FILES = \
   test/data/script_tests.json \
@@ -129,13 +131,13 @@ BITCOIN_TESTS =\
   test/util_tests.cpp \
   test/validation_block_tests.cpp \
   test/versionbits_tests.cpp \
-  test/qtumtests/test_utils.h \
-  test/qtumtests/qtumtxconverter_tests.cpp \
-  test/qtumtests/bytecodeexec_tests.cpp \
-  test/qtumtests/condensingtransaction_tests.cpp \
-  test/qtumtests/dgp_tests.cpp \
-  test/qtumtests/constantinoplefork_tests.cpp \
-  test/qtumtests/btcecrecoverfork_tests.cpp
+  test/bcstests/test_utils.h \
+  test/bcstests/bcstxconverter_tests.cpp \
+  test/bcstests/bytecodeexec_tests.cpp \
+  test/bcstests/condensingtransaction_tests.cpp \
+  test/bcstests/dgp_tests.cpp \
+  test/bcstests/constantinoplefork_tests.cpp \
+  test/bcstests/btcecrecoverfork_tests.cpp
 
 if ENABLE_PROPERTY_TESTS
 BITCOIN_TESTS += \
@@ -162,23 +164,23 @@ BITCOIN_TEST_SUITE += \
   wallet/test/init_test_fixture.h
 endif
 
-test_test_qtum_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_qtum_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(srcdir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
-test_test_qtum_LDADD =
+test_test_bcs_SOURCES = $(BITCOIN_TEST_SUITE) $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_bcs_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(srcdir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
+test_test_bcs_LDADD =
 if ENABLE_WALLET
-test_test_qtum_LDADD += $(LIBBITCOIN_WALLET)
+test_test_bcs_LDADD += $(LIBBITCOIN_WALLET)
 endif
 
-test_test_qtum_LDADD += $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+test_test_bcs_LDADD += $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIB) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(LIBETHEREUM) $(LIBETHASHSEAL) $(LIBETHASH) $(LIBETHCORE) \
   $(LIBDEVCORE) $(LIBJSONCPP) $(LIBEVM) $(LIBEVMCORE) $(LIBDEVCRYPTO) $(LIBCRYPTOPP) $(LIBSECP256K1) $(LIBSCRYIPT) $(BOOST_LIBS)
-test_test_qtum_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+test_test_bcs_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
-test_test_qtum_LDADD += $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(RAPIDCHECK_LIBS) $(LIBFF) $(GMP_LIBS) $(GMPXX_LIBS)
-test_test_qtum_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+test_test_bcs_LDADD += $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(RAPIDCHECK_LIBS) $(LIBFF) $(GMP_LIBS) $(GMPXX_LIBS)
+test_test_bcs_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
 
 if ENABLE_ZMQ
-test_test_qtum_LDADD += $(ZMQ_LIBS)
+test_test_bcs_LDADD += $(ZMQ_LIBS)
 endif
 
 if ENABLE_FUZZ
@@ -540,7 +542,7 @@ test_fuzz_blocktransactionsrequest_deserialize_LDADD = \
 test_fuzz_blocktransactionsrequest_deserialize_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 endif # ENABLE_FUZZ
 
-nodist_test_test_qtum_SOURCES = $(GENERATED_TEST_FILES)
+nodist_test_test_bcs_SOURCES = $(GENERATED_TEST_FILES)
 
 $(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
@@ -562,7 +564,7 @@ bitcoin_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
 bitcoin_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_qtum_OBJECTS) $(TEST_BINARY)
+	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_bcs_OBJECTS) $(TEST_BINARY)
 
 check-local: $(BITCOIN_TESTS:.cpp=.cpp.test)
 if BUILD_BITCOIN_TX

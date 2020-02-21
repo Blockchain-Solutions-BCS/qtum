@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,7 +26,7 @@
 #include <prevector.h>
 #include <span.h>
 
-static const unsigned int MAX_SIZE = 0x10000000; // Qtum: Increase max serialized size to 256mb
+static const unsigned int MAX_SIZE = 0x10000000; // BCS: Increase max serialized size to 256mb
 
 /**
  * Dummy data type to identify deserializing constructors.
@@ -89,7 +91,7 @@ template<typename Stream> inline void ser_writedata32(Stream &s, uint32_t obj)
     obj = htole32(obj);
     s.write((char*)&obj, 4);
 }
-///////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////// // bcs
 template<typename Stream> inline void ser_writedata32be(Stream &s, uint32_t obj)
 {
     obj = htobe32(obj);
@@ -125,7 +127,7 @@ template<typename Stream> inline uint32_t ser_readdata32(Stream &s)
     s.read((char*)&obj, 4);
     return le32toh(obj);
 }
-//////////////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////////////// // bcs
 template<typename Stream> inline uint32_t ser_readdata32be(Stream &s)
 {
     uint32_t obj;

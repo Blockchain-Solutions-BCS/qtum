@@ -21,7 +21,7 @@ from test_framework.script import (
 )
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.descriptors import descsum_create
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 from test_framework.util import (
     assert_equal,
     assert_greater_than,

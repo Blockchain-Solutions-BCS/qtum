@@ -230,10 +230,13 @@ void QRCToken::copySenderAddress()
 
 void QRCToken::removeToken()
 {
-    QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm token remove"), tr("The selected token will be removed from the list. Are you sure?"),
-        QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+    QMessageBox msgBox(QMessageBox::Question, tr("Confirm token remove"), tr("The selected token will be removed from the list. Are you sure?"),
+        QMessageBox::Yes | QMessageBox::Cancel);
+		
+	msgBox.setButtonText(QMessageBox::Yes, tr("Yes"));
+	msgBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
 
-    if(btnRetVal == QMessageBox::Yes)
+    if(msgBox.exec() == QMessageBox::Yes)
     {
         QModelIndex index = indexMenu;
         std::string sHash = index.data(TokenItemModel::HashRole).toString().toStdString();

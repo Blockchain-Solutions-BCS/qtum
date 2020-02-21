@@ -196,8 +196,8 @@ UniValue blockheaderToJSON(const CBlockIndex* tip, const CBlockIndex* blockindex
     result.pushKV("difficulty", GetDifficulty(blockindex));
     result.pushKV("chainwork", blockindex->nChainWork.GetHex());
     result.pushKV("nTx", (uint64_t)blockindex->nTx);
-    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // bcs
+    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // bcs
 
     if (blockindex->pprev)
         result.pushKV("previousblockhash", blockindex->pprev->GetBlockHash().GetHex());
@@ -225,8 +225,8 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* tip, const CBlockIn
     result.pushKV("version", block.nVersion);
     result.pushKV("versionHex", strprintf("%08x", block.nVersion));
     result.pushKV("merkleroot", block.hashMerkleRoot.GetHex());
-    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // bcs
+    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // bcs
     UniValue txs(UniValue::VARR);
     for(const auto& tx : block.vtx)
     {
@@ -263,7 +263,7 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* tip, const CBlockIn
     return result;
 }
 
-//////////////////////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////////////////////// // bcs
 UniValue executionResultToJSON(const dev::eth::ExecutionResult& exRes)
 {
     UniValue result(UniValue::VOBJ);
@@ -281,11 +281,10 @@ UniValue executionResultToJSON(const dev::eth::ExecutionResult& exRes)
     return result;
 }
 
-UniValue transactionReceiptToJSON(const QtumTransactionReceipt& txRec)
+UniValue transactionReceiptToJSON(const dev::eth::TransactionReceipt& txRec)
 {
     UniValue result(UniValue::VOBJ);
     result.pushKV("stateRoot", txRec.stateRoot().hex());
-    result.pushKV("utxoRoot", txRec.utxoRoot().hex());
     result.pushKV("gasUsed", CAmount(txRec.cumulativeGasUsed()));
     result.pushKV("bloom", txRec.bloom().hex());
     UniValue logEntries(UniValue::VARR);
@@ -1224,7 +1223,7 @@ static UniValue getblock(const JSONRPCRequest& request)
     return blockToJSON(block, chainActive.Tip(), pblockindex, verbosity >= 2);
 }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // bcs
 UniValue callcontract(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() < 2 || request.params.size() > 4)
@@ -1290,9 +1289,9 @@ UniValue callcontract(const JSONRPCRequest& request)
     
     dev::Address senderAddress;
     if(request.params.size() >= 3){
-        CTxDestination qtumSenderAddress = DecodeDestination(request.params[2].get_str());
-        if (IsValidDestination(qtumSenderAddress)) {
-            const CKeyID *keyid = boost::get<CKeyID>(&qtumSenderAddress);
+        CTxDestination bcsSenderAddress = DecodeDestination(request.params[2].get_str());
+        if (IsValidDestination(bcsSenderAddress)) {
+            const CKeyID *keyid = boost::get<CKeyID>(&bcsSenderAddress);
             senderAddress = dev::Address(HexStr(valtype(keyid->begin(),keyid->end())));
         }else{
             senderAddress = dev::Address(request.params[2].get_str());
@@ -2161,8 +2160,8 @@ UniValue gettxout(const JSONRPCRequest& request)
             "     \"hex\" : \"hex\",        (string) \n"
             "     \"reqSigs\" : n,          (numeric) Number of required signatures\n"
             "     \"type\" : \"pubkeyhash\", (string) The type, eg pubkeyhash\n"
-            "     \"addresses\" : [          (array of string) array of qtum addresses\n"
-            "        \"address\"     (string) qtum address\n"
+            "     \"addresses\" : [          (array of string) array of bcs addresses\n"
+            "        \"address\"     (string) bcs address\n"
             "        ,...\n"
             "     ]\n"
             "  },\n"

@@ -189,61 +189,61 @@ BASE_SCRIPTS = [
     # # Don't append tests at the end to avoid merge conflicts
     # # Put them in a random line within the section that fits their approximate run-time
 
-    # # qtum
-    'qtum_dgp.py',
-    'qtum_pos.py',
-    'qtum_opcall.py',
-    'qtum_opcreate.py',
-    'qtum_8mb_block.py',
-    'qtum_gas_limit.py',
-    'qtum_searchlog.py',
-    'qtum_pos_segwit.py',
-    'qtum_state_root.py',
-    'qtum_evm_globals.py',
-    'qtum_null_sender.py',
-    'qtum_waitforlogs.py',
-    'qtum_block_header.py',
-    'qtum_callcontract.py',
-    'qtum_spend_op_call.py',
-    'qtum_condensing_txs.py',
-    'qtum_createcontract.py',
-    'qtum_sendtocontract.py',
-    'qtum_identical_refunds.py',
-    'qtum_create_eth_op_code.py',
-    'qtum_gas_limit_overflow.py',
-    'qtum_call_empty_contract.py',
-    'qtum_dgp_block_size_sync.py',
-    'qtum_pos_conflicting_txs.py',
-    'qtum_globals_state_changer.py',
-    'qtum_no_exec_call_disabled.py',
-    'qtum_soft_block_gas_limits.py',
-    'qtum_dgp_block_size_restart.py',
-    'qtum_searchlog_restart_node.py',
-    'qtum_immature_coinstake_spend.py',
-    'qtum_transaction_prioritization.py',
-    'qtum_assign_mpos_fees_to_gas_refund.py',
-    'qtum_ignore_mpos_participant_reward.py',
-    'qtum_evm_constantinople_activation.py',
-    'qtum_many_value_refunds_from_same_tx.py',
-    'qtum_combined_outputs_exceed_gas_limit.py',
-    'qtum_dgp_gas_price_lingering_mempool_tx.py',
-    'qtum_dgp_gas_schedule.py',
-    'qtum_header_spam.py',
-    'qtum_divergence_dos.py',
-    'qtum_prioritize_create_over_call.py',
-    'qtum_callcontract_timestamp.py',
-    'qtum_transaction_receipt_origin_contract_address.py',
-    'qtum_block_number_corruption.py',
-    'qtum_duplicate_stake.py',
-    'qtum_rpc_bitcore.py',
-    'qtum_faulty_header_chain.py',
-    'qtum_signrawsender.py',
-    'qtum_op_sender.py',
-    'qtum_evm_revert.py',
-    'qtum_evm_create2.py',
-    'qtum_evm_staticcall.py',
-    'qtum_evm_constantinople_precompiles.py',
-    'qtum_evm_constantinople_opcodes.py',
+    # # bcs
+    'bcs_dgp.py',
+    'bcs_pos.py',
+    'bcs_opcall.py',
+    'bcs_opcreate.py',
+    'bcs_8mb_block.py',
+    'bcs_gas_limit.py',
+    'bcs_searchlog.py',
+    'bcs_pos_segwit.py',
+    'bcs_state_root.py',
+    'bcs_evm_globals.py',
+    'bcs_null_sender.py',
+    'bcs_waitforlogs.py',
+    'bcs_block_header.py',
+    'bcs_callcontract.py',
+    'bcs_spend_op_call.py',
+    'bcs_condensing_txs.py',
+    'bcs_createcontract.py',
+    'bcs_sendtocontract.py',
+    'bcs_identical_refunds.py',
+    'bcs_create_eth_op_code.py',
+    'bcs_gas_limit_overflow.py',
+    'bcs_call_empty_contract.py',
+    'bcs_dgp_block_size_sync.py',
+    'bcs_pos_conflicting_txs.py',
+    'bcs_globals_state_changer.py',
+    'bcs_no_exec_call_disabled.py',
+    'bcs_soft_block_gas_limits.py',
+    'bcs_dgp_block_size_restart.py',
+    'bcs_searchlog_restart_node.py',
+    'bcs_immature_coinstake_spend.py',
+    'bcs_transaction_prioritization.py',
+    'bcs_assign_mpos_fees_to_gas_refund.py',
+    'bcs_ignore_mpos_participant_reward.py',
+    'bcs_evm_constantinople_activation.py',
+    'bcs_many_value_refunds_from_same_tx.py',
+    'bcs_combined_outputs_exceed_gas_limit.py',
+    'bcs_dgp_gas_price_lingering_mempool_tx.py',
+    'bcs_dgp_gas_schedule.py',
+    'bcs_header_spam.py',
+    'bcs_divergence_dos.py',
+    'bcs_prioritize_create_over_call.py',
+    'bcs_callcontract_timestamp.py',
+    'bcs_transaction_receipt_origin_contract_address.py',
+    'bcs_block_number_corruption.py',
+    'bcs_duplicate_stake.py',
+    'bcs_rpc_bitcore.py',
+    'bcs_faulty_header_chain.py',
+    'bcs_signrawsender.py',
+    'bcs_op_sender.py',
+    'bcs_evm_revert.py',
+    'bcs_evm_create2.py',
+    'bcs_evm_staticcall.py',
+    'bcs_evm_constantinople_precompiles.py',
+    'bcs_evm_constantinople_opcodes.py',
 ]
 
 EXTENDED_SCRIPTS = [
@@ -253,7 +253,7 @@ EXTENDED_SCRIPTS = [
     'feature_fee_estimation.py',
     'feature_pruning.py',
     'feature_dbcrash.py',
-    # Version <4 blocks are never allowed in regtest on qtum
+    # Version <4 blocks are never allowed in regtest on bcs
     'feature_bip68_sequence.py',
     'p2p_unrequested_blocks.py',
     'feature_dersig.py',
@@ -384,8 +384,8 @@ def run_tests(*, test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=
 
     # Warn if bitcoind is already running (unix only)
     try:
-        if subprocess.check_output(["pidof", "qtumd"]) is not None:
-            print("%sWARNING!%s There is already a qtumd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
+        if subprocess.check_output(["pidof", "bcsd"]) is not None:
+            print("%sWARNING!%s There is already a bcsd process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except (OSError, subprocess.SubprocessError):
         pass
 
@@ -611,7 +611,7 @@ class TestResult():
 def check_script_prefixes():
     """Check that test scripts start with one of the allowed name prefixes."""
 
-    good_prefixes_re = re.compile("(example|feature|interface|mempool|mining|p2p|rpc|wallet|tool|qtum)_")
+    good_prefixes_re = re.compile("(example|feature|interface|mempool|mining|p2p|rpc|wallet|tool|bcs)_")
     bad_script_names = [script for script in ALL_SCRIPTS if good_prefixes_re.match(script) is None]
 
     if bad_script_names:

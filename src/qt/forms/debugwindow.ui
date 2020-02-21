@@ -399,7 +399,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QtumPushButton" name="openDebugLogfileButton">
+          <widget class="BCSPushButton" name="openDebugLogfileButton">
            <property name="toolTip">
             <string>Open the %1 debug log file from the current data directory. This can take a few seconds for large log files.</string>
            </property>
@@ -477,7 +477,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QtumPushButton" name="fontSmallerButton">
+          <widget class="BCSPushButton" name="fontSmallerButton">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -509,7 +509,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QtumPushButton" name="fontBiggerButton">
+          <widget class="BCSPushButton" name="fontBiggerButton">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -541,7 +541,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QtumPushButton" name="clearButton">
+          <widget class="BCSPushButton" name="clearButton">
            <property name="maximumSize">
             <size>
              <width>24</width>
@@ -599,7 +599,7 @@
           <number>3</number>
          </property>
          <item>
-          <widget class="QtumPushButton" name="promptIcon">
+          <widget class="BCSPushButton" name="promptIcon">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -1508,9 +1508,9 @@
    </slots>
   </customwidget>
   <customwidget>
-   <class>QtumPushButton</class>
+   <class>BCSPushButton</class>
    <extends>QPushButton</extends>
-   <header>qt/qtumpushbutton.h</header>
+   <header>qt/bcspushbutton.h</header>
   </customwidget>
  </customwidgets>
  <resources>

@@ -170,8 +170,13 @@ void ContractBookPage::on_deleteContractInfo_clicked()
         QModelIndex index = table->model()->index(row, ContractTableModel::Address);
         QString contractAddress = table->model()->data(index).toString();
         QString message = tr("Are you sure you want to delete the address \"%1\" from your contract address list?");
-        if(QMessageBox::Yes == QMessageBox::question(this, tr("Delete contact address"), message.arg(contractAddress),
-                                                     QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel))
+		QMessageBox box (QMessageBox::Question, tr("Delete contact address"), message.arg(contractAddress),
+                                                     QMessageBox::Yes | QMessageBox::Cancel);
+													 
+		box.setButtonText(QMessageBox::Yes, tr("Yes"));
+		box.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+		
+        if(box.exec() == QMessageBox::Yes)
         {
             table->model()->removeRow(row);
         }

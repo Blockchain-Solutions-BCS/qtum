@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -287,11 +289,14 @@ void OptionsDialog::on_resetButton_clicked()
     if(model)
     {
         // confirmation dialog
-        QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm options reset"),
+        QMessageBox msgBox(QMessageBox::Question, tr("Confirm options reset"),
             tr("Client restart required to activate changes.") + "<br><br>" + tr("Client will be shut down. Do you want to proceed?"),
-            QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+            QMessageBox::Yes | QMessageBox::Cancel);
+			
+		msgBox.setButtonText(QMessageBox::Yes, tr("Yes"));
+		msgBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
 
-        if(btnRetVal == QMessageBox::Cancel)
+        if(msgBox.exec() == QMessageBox::Cancel)
             return;
 
         /* reset all options and close GUI */
@@ -318,11 +323,14 @@ void OptionsDialog::on_okButton_clicked()
     updateDefaultProxyNets();
 
     if (model && model->isRestartRequired()) {
-        QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm wallet restart"),
+        QMessageBox msgBox (QMessageBox::Question, tr("Confirm wallet restart"),
                  QString("%1<br><br>%2").arg(tr("Client restart required to activate changes."), tr("Are you sure you wish to restart your wallet?")),
-                 QMessageBox::Yes|QMessageBox::Cancel,
-                 QMessageBox::Cancel);
-        if(retval == QMessageBox::Yes)
+                 QMessageBox::Yes|QMessageBox::Cancel);
+		
+		msgBox.setButtonText(QMessageBox::Yes, tr("Yes"));
+		msgBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+		
+        if(msgBox.exec() == QMessageBox::Yes)
         {
 
             qApp->processEvents();

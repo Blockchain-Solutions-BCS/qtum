@@ -1445,7 +1445,7 @@ static void ThreadMapPort()
             }
         }
 
-        std::string strDesc = "Qtum " + FormatFullVersion();
+        std::string strDesc = "BCS " + FormatFullVersion();
 
         do {
 #ifndef UPNPDISCOVER_SUCCESS

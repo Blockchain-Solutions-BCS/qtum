@@ -18,10 +18,10 @@ static const QString STYLE_FORMAT = ":/styles/%1/%2";
 static const QString STYLE_CONFIG_FORMAT = ":/styles/%1/config";
 static const QColor LINK_COLOR = "#2d9ad0";
 
-class QtumStyle : public QProxyStyle
+class BCSStyle : public QProxyStyle
 {
 public:
-    QtumStyle()
+    BCSStyle()
     {
         message_info_path = GetStringStyleValue("appstyle/message-info-icon", ":/styles/theme1/app-icons/message_info");
         message_warning_path = GetStringStyleValue("appstyle/message-warning-icon", ":/styles/theme1/app-icons/message_warning");
@@ -126,9 +126,9 @@ void StyleSheet::setStyleSheet(QWidget *widget, const QString &style_name)
 void StyleSheet::setStyleSheet(QApplication *app, const QString& style_name)
 {
     QStyle* mainStyle = QStyleFactory::create("fusion");
-    QtumStyle* qtumStyle = new QtumStyle;
-    qtumStyle->setBaseStyle(mainStyle);
-    app->setStyle(qtumStyle);
+    BCSStyle* bcsStyle = new BCSStyle;
+    bcsStyle->setBaseStyle(mainStyle);
+    app->setStyle(bcsStyle);
 
     QPalette mainPalette(app->palette());
     mainPalette.setColor(QPalette::Link, GetStyleValue("appstyle/link-color", LINK_COLOR).toString());
@@ -173,18 +173,18 @@ QString StyleSheet::getCurrentTheme()
 
 QStringList StyleSheet::getSupportedThemes()
 {
-    return QStringList() << "theme3" << "theme2" << "theme1";
+    return QStringList() << "theme4" << "theme3" << "theme2" << "theme1";
 }
 
 QStringList StyleSheet::getSupportedThemesNames()
 {
-    return QStringList() << "Light blue theme" << "Dark blue theme" << "Dark theme";
+    return QStringList() << "BCS official theme" << "Light blue theme" << "Dark blue theme" << "Dark theme";
 }
 
 
 QString StyleSheet::getDefaultTheme()
 {
-    return "theme3";
+    return "theme4";
 }
 
 bool StyleSheet::setTheme(const QString &theme)

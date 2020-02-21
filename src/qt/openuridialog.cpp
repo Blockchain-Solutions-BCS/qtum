@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,8 +21,10 @@ OpenURIDialog::OpenURIDialog(QWidget *parent) :
 
     SetObjectStyleSheet(ui->buttonBox->button(QDialogButtonBox::Cancel), StyleSheetNames::ButtonLight);
     SetObjectStyleSheet(ui->buttonBox->button(QDialogButtonBox::Ok), StyleSheetNames::ButtonGray);
+	
+	ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 
-    ui->uriEdit->setPlaceholderText("qtum:");
+    ui->uriEdit->setPlaceholderText("bcs:");
 }
 
 OpenURIDialog::~OpenURIDialog()
@@ -51,5 +55,5 @@ void OpenURIDialog::on_selectFileButton_clicked()
     if(filename.isEmpty())
         return;
     QUrl fileUri = QUrl::fromLocalFile(filename);
-    ui->uriEdit->setText("qtum:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
+    ui->uriEdit->setText("bcs:?r=" + QUrl::toPercentEncoding(fileUri.toString()));
 }

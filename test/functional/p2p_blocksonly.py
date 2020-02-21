@@ -8,7 +8,7 @@ from test_framework.messages import msg_tx, CTransaction, FromHex
 from test_framework.mininode import P2PInterface
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD
+from test_framework.bcsconfig import INITIAL_BLOCK_REWARD
 
 
 class P2PBlocksOnly(BitcoinTestFramework):

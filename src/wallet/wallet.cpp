@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -5412,15 +5414,15 @@ bool CWallet::LoadContractData(const std::string &address, const std::string &ke
     return ret;
 }
 
-void CWallet::StakeQtums(bool fStake, CConnman* connman)
+void CWallet::StakeBCSs(bool fStake, CConnman* connman)
 {
-    ::StakeQtums(fStake, this, connman, stakeThread);
+    ::StakeBCSs(fStake, this, connman, stakeThread);
 }
 
 void CWallet::StartStake(CConnman *connman)
 {
     m_enabled_staking = true;
-    StakeQtums(true, connman);
+    StakeBCSs(true, connman);
 }
 
 void CWallet::StopStake()
@@ -5430,7 +5432,7 @@ void CWallet::StopStake()
     {
         auto locked_chain = chain().lock();
         LOCK(cs_wallet);
-        StakeQtums(false, 0);
+        StakeBCSs(false, 0);
     }
     stakeThread = 0;
 }

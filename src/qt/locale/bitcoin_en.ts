@@ -85,12 +85,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your BCS addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your BCS addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -153,6 +153,18 @@
         <location filename="../forms/askpassphrasedialog.ui" line="+26"/>
         <source>Passphrase Dialog</source>
         <translation>Passphrase Dialog</translation>
+    </message>
+	<message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location line="+30"/>
@@ -221,8 +233,8 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished"></translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BCSS&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BCS COINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -237,8 +249,8 @@
     </message>
     <message>
         <location line="-56"/>
-        <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished"></translation>
+        <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your bcss from being stolen by malware infecting your computer.</source>
+        <translation>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your BCS coins from being stolen by malware infecting your computer.</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -293,6 +305,10 @@
         <source>Warning: The Caps Lock key is on!</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <source>For staking only.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>BanTableModel</name>
@@ -308,11 +324,95 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>BitcoinGUI</name>
     <message>
-        <location filename="../qtumgui.cpp" line="+318"/>
+        <location filename="../bitcoingui.cpp" line="+318"/>
         <source>Sign &amp;message...</source>
         <translation>Sign &amp;message...</translation>
+    </message>
+<message>
+        <source>&amp;File</source>
+        <translation>&amp;File</translation>
+    </message>
+	<message>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Unlock Wallet...</translation>
+    </message>
+	<message>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Lock Wallet</translation>
+    </message>
+<message>
+        <source>&amp;Restore Wallet...</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>&amp;Restore Wallet...</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Smart &amp;Contracts</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Smart contracts</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Create</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Send To</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Call</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>&amp;Stake</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Show stake of wallet</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>&amp;Tokens</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Tokens (send, receive or add Tokens in list)</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Not staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Not staking because wallet is offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Not staking because wallet is syncing</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Not staking because you don't have mature coins</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>Not staking because wallet is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+<message>
+        <source>My &amp;wallet</source>
+        <translation>My &amp;wallet</translation>
+    </message>
+	<message>
+        <source>Staking. Your weight is %1 Network weight is %2 Expected time to earn reward is %3</source>
+        <translation>Staking.&lt;br/&gt;Your weight is %1&lt;br/&gt;Network weight is %2&lt;br/&gt;Expected time to earn reward is %3</translation>
     </message>
     <message>
         <location line="+621"/>
@@ -436,8 +536,8 @@
     </message>
     <message>
         <location line="-1017"/>
-        <source>Send coins to a Qtum address</source>
-        <translation>Send coins to a Qtum address</translation>
+        <source>Send coins to a BCS address</source>
+        <translation>Send coins to a BCS address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -466,8 +566,8 @@
     </message>
     <message>
         <location line="+707"/>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>BCS</source>
+        <translation>BCS</translation>
     </message>
     <message>
         <location line="-780"/>
@@ -496,13 +596,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Sign messages with your Qtum addresses to prove you own them</translation>
+        <source>Sign messages with your BCS addresses to prove you own them</source>
+        <translation>Sign messages with your BCS addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Qtum addresses</translation>
+        <source>Verify messages to ensure they were signed with specified BCS addresses</source>
+        <translation>Verify messages to ensure they were signed with specified BCS addresses</translation>
     </message>
     <message>
         <location line="+104"/>
@@ -526,7 +626,7 @@
     </message>
     <message>
         <location line="-257"/>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
+        <source>Request payments (generates QR codes and bcs: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -541,7 +641,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Open a qtum: URI or payment request</source>
+        <source>Open a bcs: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -551,10 +651,10 @@
     </message>
     <message numerus="yes">
         <location line="+524"/>
-        <source>%n active connection(s) to Qtum network</source>
+        <source>%n active connection(s) to BCS network</source>
         <translation>
-            <numerusform>%n active connection to Qtum network</numerusform>
-            <numerusform>%n active connections to Qtum network</numerusform>
+            <numerusform>%n active connection to BCS network</numerusform>
+            <numerusform>%n active connections to BCS network</numerusform>
         </translation>
     </message>
     <message>
@@ -612,7 +712,7 @@
     </message>
     <message>
         <location line="-640"/>
-        <source>&amp;Sending addresses</source>
+        <source>&amp;Sending addresses...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -642,7 +742,7 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible BCS command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -766,14 +866,54 @@
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
+	<message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked for staking only&lt;/b&gt;</source>
+        <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked for staking only&lt;/b&gt;</translation>
+    </message>
     <message>
         <location line="+8"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
+	<message>
+        <source>New version of BCS wallet is available on the BCS source code repository: %1. It is recommended to download it and update this application</source>
+        <translation>New version of BCS wallet is available on the BCS source code repository: &lt;br/&gt; %1. &lt;br/&gt;It is recommended to download it and update this application</translation>
+    </message>
+	<message>
+        <source>Check for updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message numerus="yes">
+        <source>%n second(s)</source>
+        <translation>
+            <numerusform>%n second</numerusform>
+            <numerusform>%n seconds</numerusform>
+        </translation>
+    </message>
+	<message numerus="yes">
+        <source>%n minute(s)</source>
+        <translation>
+            <numerusform>%n minute</numerusform>
+            <numerusform>%n minutes</numerusform>
+        </translation>
+    </message>
+	<message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation>
+            <numerusform>%n hour</numerusform>
+            <numerusform>%n hours</numerusform>
+        </translation>
+    </message>
+	<message numerus="yes">
+        <source>%n day(s)</source>
+        <translation>
+            <numerusform>%n day</numerusform>
+            <numerusform>%n days</numerusform>
+        </translation>
+    </message>
     <message>
-        <location filename="../qtum.cpp" line="+392"/>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
+        <location filename="../bitcoin.cpp" line="+392"/>
+        <source>A fatal error occurred. BCS can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1011,7 +1151,7 @@
     </message>
     <message>
         <location line="+75"/>
-        <source>The entered address &quot;%1&quot; is not a valid Qtum address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid BCS address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1033,6 +1173,10 @@
         <location line="+5"/>
         <source>New key generation failed.</source>
         <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
 </context>
 <context>
@@ -1131,8 +1275,8 @@
     </message>
     <message>
         <location filename="../intro.cpp" line="+22"/>
-        <source>Qtum</source>
-        <translation type="unfinished">Qtum</translation>
+        <source>BCS</source>
+        <translation type="unfinished">BCS</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1146,7 +1290,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
+        <source>%1 will download and store a copy of the BCS block chain.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1190,13 +1334,13 @@
     </message>
     <message>
         <location line="+119"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bcs network, as detailed below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished"></translation>
+        <source>Attempting to spend bcss that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Attempting to spend bcs coins that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -1258,6 +1402,10 @@
         <location line="+6"/>
         <source>Open payment request from URI or file</source>
         <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -1428,8 +1576,8 @@
     </message>
     <message>
         <location line="+30"/>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the BCS client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1448,8 +1596,8 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation type="unfinished"></translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation>Connect to the BCS network through a SOCKS5 proxy.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1496,8 +1644,8 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation type="unfinished"></translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Connect to the BCS network through a separate SOCKS5 proxy for Tor hidden services.</translation>
     </message>
     <message>
         <location line="+105"/>
@@ -1564,6 +1712,14 @@
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
     </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
     <message>
         <location line="+13"/>
         <source>&amp;Cancel</source>
@@ -1588,6 +1744,14 @@
         <location line="+1"/>
         <location line="+60"/>
         <source>Client restart required to activate changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Are you sure you wish to restart your wallet?</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirm wallet restart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1625,6 +1789,38 @@
         <source>The supplied proxy address is invalid.</source>
         <translation>The supplied proxy address is invalid.</translation>
     </message>
+	<message>
+        <source>Reserve</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Reserve amount that will not be used for staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Enable  log &amp;events</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Enable &amp;zero balance for receiver token address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Use change &amp;address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Check for &amp;updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>User Interface &amp;style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The user interface style can be set here. This setting will take effect after restarting %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OverviewPage</name>
@@ -1636,8 +1832,8 @@
     <message>
         <location line="+62"/>
         <location line="+386"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BCS network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the BCS network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-139"/>
@@ -1701,7 +1897,7 @@
     </message>
     <message>
         <location line="+49"/>
-        <source>Recent transactions</source>
+        <source>Recent Transactions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1719,6 +1915,38 @@
         <source>Current total balance in watch-only addresses</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Receive</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>More</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Stake:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -1734,7 +1962,7 @@
     </message>
     <message>
         <location line="-529"/>
-        <source>Cannot start qtum: click-to-pay handler</source>
+        <source>Cannot start bcs: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1749,7 +1977,7 @@
     </message>
     <message>
         <location line="-53"/>
-        <source>&apos;qtum://&apos; is not a valid URI. Use &apos;qtum:&apos; instead.</source>
+        <source>&apos;bcs://&apos; is not a valid URI. Use &apos;bcs:&apos; instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1775,7 +2003,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid BCS address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1902,13 +2130,13 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../qtumunits.cpp" line="+197"/>
+        <location filename="../bitcoinunits.cpp" line="+197"/>
         <source>Amount</source>
         <translation type="unfinished">Amount</translation>
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+107"/>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a BCS address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2022,7 +2250,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qtum.cpp" line="+185"/>
+        <location filename="../bitcoin.cpp" line="+185"/>
         <source>%1 didn&apos;t yet exit safely...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2035,7 +2263,7 @@
 <context>
     <name>QObject::QObject</name>
     <message>
-        <location filename="../qtum.cpp" line="-113"/>
+        <location filename="../bitcoin.cpp" line="-113"/>
         <source>Error parsing command line arguments: %1.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2535,7 +2763,7 @@
     <message>
         <location line="-3"/>
         <location line="+46"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BCS network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2625,6 +2853,14 @@
         <source>Copy amount</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <source>&amp;Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>S&amp;ubmit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -2698,6 +2934,22 @@
         <source>Error encoding URI into QR Code.</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <source>Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Address Re&amp;fresh</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>&amp;Request Payment</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Clear &amp;All</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecentRequestsTableModel</name>
@@ -2744,6 +2996,14 @@
         <location filename="../sendcoinsdialog.cpp" line="+593"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -2849,12 +3109,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+112"/>
-        <source>Recommended:</source>
+        <source>Recommended</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+30"/>
-        <source>Custom:</source>
+        <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2884,7 +3144,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+543"/>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bcs transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3075,7 +3335,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+101"/>
-        <source>Warning: Invalid Qtum address</source>
+        <source>Warning: Invalid BCS address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3130,7 +3390,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+39"/>
-        <source>The Qtum address to send the payment to</source>
+        <source>The BCS address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3157,7 +3417,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-1028"/>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bcs coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3192,7 +3452,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+54"/>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
+        <source>A message that was attached to the bcs: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BCS network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3219,6 +3479,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <location filename="../sendcoinsdialog.cpp" line="+83"/>
         <location line="+5"/>
         <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3249,12 +3513,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+6"/>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive bcss sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The Qtum address to sign the message with</source>
+        <source>The BCS address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3296,8 +3560,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Sign the message to prove you own this Qtum address</translation>
+        <source>Sign the message to prove you own this BCS address</source>
+        <translation>Sign the message to prove you own this BCS address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3327,13 +3591,13 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>The Qtum address the message was signed with</source>
+        <source>The BCS address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verify the message to ensure it was signed with the specified Qtum address</translation>
+        <source>Verify the message to ensure it was signed with the specified BCS address</source>
+        <translation>Verify the message to ensure it was signed with the specified BCS address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3673,6 +3937,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <source>Details for %1</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <source>Transaction details</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TransactionTableModel</name>
@@ -3762,6 +4030,14 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     <message>
         <location line="+2"/>
         <source>Mined</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract receive</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract send</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4008,11 +4284,19 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <source>to</source>
         <translation type="unfinished"></translation>
     </message>
+	<message>
+        <source>Contract Receive</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract Send</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
     <message>
-        <location filename="../qtumgui.cpp" line="+154"/>
+        <location filename="../bitcoingui.cpp" line="+154"/>
         <source>Unit to show amounts in. Click to select another unit.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4033,6 +4317,14 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <location line="+1"/>
         <source>Closing the wallet for too long can result in having to resync the entire chain if pruning is enabled.</source>
         <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
     </message>
 </context>
 <context>
@@ -4152,9 +4444,9 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>bitcoin-core</name>
     <message>
-        <location filename="../qtumstrings.cpp" line="+29"/>
+        <location filename="../bitcoinstrings.cpp" line="+29"/>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4190,8 +4482,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-170"/>
-        <source>Qtum Core</source>
-        <translation type="unfinished">Qtum Core</translation>
+        <source>BCS Core</source>
+        <translation type="unfinished">BCS Core</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4787,6 +5079,26 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
 </context>
 <context>
     <name>RestoreDialog</name>
+	<message>
+        <source>File not selected</source>
+        <translation>File not selected</translation>
+    </message>
+	<message>
+        <source>Please select a file to restore your wallet.</source>
+        <translation>Please select a file to restore your wallet.</translation>
+    </message>
+	<message>
+        <source>Confirm wallet restoration</source>
+        <translation>Confirm wallet restoration</translation>
+    </message>
+	<message>
+        <source>Warning: The wallet will be restored from location &lt;b&gt;%1&lt;/b&gt; and restarted with parameter &lt;b&gt;%2&lt;/b&gt;.</source>
+        <translation>Warning: The wallet will be restored from location &lt;b&gt;%1&lt;/b&gt; and restarted with parameter &lt;b&gt;%2&lt;/b&gt;.</translation>
+    </message>
+	<message>
+        <source>&lt;br&gt;&lt;br&gt;Are you sure you wish to restore your wallet?</source>
+        <translation>&lt;br&gt;&lt;br&gt;Are you sure you wish to restore your wallet?</translation>
+    </message>
     <message>
         <source>Rebuild blockchain index</source>
         <translation>rescan – rescan the blockchain for missing transactions.
@@ -4805,7 +5117,961 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <source>The wallet.dat will be restored from the selected location and the Qt Wallet will be restarted with the -reindex, -zapwallettxes=2 or -deleteblockchaindata option.</source>
-        <translation>Backup your wallet first, requires client restart after selecting option.</translation>
+        <translation>Backup your wallet first, requires client restart after selecting option. The wallet.dat will be restored from the selected location and the Qt Wallet will be restarted with the -reindex, -zapwallettxes=2 or -deleteblockchaindata option.</translation>
+    </message>
+	<message>
+        <source>&amp;Reset</source>
+        <translation>&amp;Reset</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+	<message>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Cancel</translation>
+    </message>
+	<message>
+        <source>Restore Wallet</source>
+        <translation>Restore Wallet</translation>
+    </message>
+	<message>
+        <source>Select wallet file to restore from</source>
+        <translation>Select wallet file to restore from</translation>
+    </message>
+	<message>
+        <source>Choose wallet restore option</source>
+        <translation>Choose wallet restore option</translation>
+    </message>
+	<message>
+        <source>Restore file</source>
+        <translation>Restore file</translation>
+    </message>
+</context>
+<context>
+    <name>QRCToken</name>
+    <message>
+        <location filename="../qrctoken.cpp"/>
+        <source>Copy receive address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy token balance</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy token name</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy contract address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Remove token</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirm token remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The selected token will be removed from the list. Are you sure?</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+</context>
+<context>
+	<name>CreateContract</name>
+	<message>
+        <source>The bytecode of the contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The BCS address that will be used to create the contract.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Create Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Solidity compiler</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>High Gas price</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Are you sure you want to create contract?</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirm contract creation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas limit. Default = %1, Max = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas price: BCS price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Result %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Create Smart Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Bytecode</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Constructor</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Optional</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Sender Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>SendToContract</name>
+	<message>
+        <source>Send To Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Result %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Send to Smart Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Choose from contract book page</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Paste contract address from clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Save contract info</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Optional</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas Price</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Sender Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Send To Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The contract address that will receive the funds and data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The amount in BCS to send. Default = 0.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The BCS address that will be used as sender.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>High Gas price</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Are you sure you want to send to the contract:</source>
+        <translation>Are you sure you want to send to the contract: &lt;br/&gt;&lt;br/&gt;</translation>
+    </message>
+	<message>
+        <source>Confirm sending to contract.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas limit. Default = %1, Max = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas price: BCS price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>SendTokenPage</name>
+	<message>
+        <source>The address that will receive the tokens.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The amount in Token to send.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Optional description for transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas limit. Default = %1, Max = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Gas price: BCS price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Are you sure you want to send?&lt;br&gt;&lt;br/&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>&lt;b&gt;%1 %2 &lt;/b&gt; to </source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirm send token.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Send token</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>GasPrice</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>GasLimit</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>PayTo</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Balance:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>CallContract</name>
+	<message>
+        <source>Call Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Result %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Call Smart Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Choose from contract book page</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Paste contract address from clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Save contract info</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Optional</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Sender Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The sender address hex string.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Call Contract</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>TokenItemWidget</name>
+	<message>
+        <source>Send</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Receive</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Add new tokens</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>AddTokenPage</name>
+	<message>
+        <source>ADD Token</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Token Symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Decimals</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Token Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Token Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>(This is your wallet address which will be tied to the token for send/receive operations)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The %1 address \"%2\" is not yours, please change it to new one.\n</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Invalid token address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Token exist</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The token already exist with the specified contract and sender addresses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Log events</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Enable log events from the option menu in order to receive token transactions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>ReceiveTokenPage</name>
+	<message>
+        <source>Receive</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>StakePage</name>
+	<message>
+        <source>Your current spendable balance</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Staking assets</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Stake:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Staking</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Block height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Block reward:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>4 BCS/Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>/Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Network weight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Expected annualized ROI:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Stake records</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>TokenTransactionTableModel</name>
+	<message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Unconfirmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirming (%1 of %2 recommended confirmations)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Confirmed (%1 confirmations)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Received with</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Received from</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Sent to</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Payment to yourself</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>(n/a)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Transaction status. Hover over this field to show number of confirmations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Date and time that the transaction was received.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Type of transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>User-defined intent/purpose of the transaction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Token Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Amount removed from or added to balance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+	<name>TokenTransactionView</name>
+	<message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Today</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>This week</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>This month</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Last month</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>This year</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Range...</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Received with</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Sent to</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>To yourself</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Enter address to search</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Min amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy transaction ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy full transaction details</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Show transaction details</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Range:</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>to</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TokenTransactionDesc</name>
+    <message>
+        <source>conflicted with a transaction with %1 confirmations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>0/unconfirmed, in memory pool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>0/unconfirmed, not in memory pool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1/unconfirmed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 confirmations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished">Date</translation>
+    </message>
+    <message>
+        <source>Token Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Credit</source>
+        <translation type="unfinished"></translation>
+    </message> 
+	<message>
+        <source>Debit</source>
+        <translation type="unfinished"></translation>
+    </message> 
+    <message>
+        <source>Net Amount</source>
+        <translation type="unfinished"></translation>
+    </message>   
+</context>
+<context>
+    <name>TokenDescDialog</name>
+	<message>
+        <source>Token transaction details</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Details for %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContractResult</name>
+	<message>
+        <source>Contract Summary</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>ContractAddress</source>
+        <translation>Contract Address</translation>
+    </message>
+	<message>
+        <source>Hash160</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>SenderAddress</source>
+        <translation>Sender Address</translation>
+    </message>
+	<message>
+        <source>Transaction ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContractBookPage</name>
+	<message>
+        <source>Choose the contract for send/call</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>These are your saved contracts. Always check the contract address and the ABI before sending/calling.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy &amp;Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy &amp;Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy &amp;Interface</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>&amp;Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Delete contact address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Exporting Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Create a new contract info</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy the currently selected contract address to the system clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Delete the currently selected contract info from the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Export the data to a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Choose</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+	<message>
+        <source>Are you sure you want to delete the address &quot;%1&quot; from your contract address list?</source>
+        <translation>Are you sure you want to delete the address &quot;%1&quot; from your contract address list?</translation>
+    </message>
+</context>
+<context>
+    <name>ContractTableModel</name>
+	<message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>(no label)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>EditContractInfoDialog</name>
+	<message>
+        <source>New contract info</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Edit contract info</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>The entered address \"%1\" is already in the contract book.</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+</context>
+<context>
+    <name>ABIFunctionField</name>
+	<message>
+        <source>Function</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QDialogButtonBox</name>
+	<message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

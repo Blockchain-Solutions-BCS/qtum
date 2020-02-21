@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test the wallet balance RPC methods."""
@@ -10,10 +12,10 @@ from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
-from test_framework.qtum import convert_btc_address_to_qtum
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
+from test_framework.bcs import convert_btc_address_to_bcs
+from test_framework.bcsconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
 
-RANDOM_COINBASE_ADDRESS = convert_btc_address_to_qtum('mneYUmWYsuk7kySiURxCi3AGxrAqZxLgPZ')
+RANDOM_COINBASE_ADDRESS = convert_btc_address_to_bcs('mneYUmWYsuk7kySiURxCi3AGxrAqZxLgPZ')
 
 def create_transactions(node, address, amt, fees):
     # Create and sign raw transactions from node to address for amt.
@@ -52,7 +54,7 @@ class WalletTest(BitcoinTestFramework):
         assert_equal(len(self.nodes[0].listunspent()), 0)
         assert_equal(len(self.nodes[1].listunspent()), 0)
 
-        self.log.info("We use a third node here that sends 50 qtum to each of the two other nodes to keep compatibility with bitcoin")
+        self.log.info("We use a third node here that sends 50 bcs to each of the two other nodes to keep compatibility with bitcoin")
 
         self.nodes[2].generate(1)
         self.sync_all()
