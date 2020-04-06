@@ -813,3 +813,16 @@ void WalletModel::checkCoinAddresses()
 {
     updateCoinAddresses = true;
 }
+
+QString WalletModel::getDefaultTokenAddressByLabel(QString label) {
+ std::vector<std::string> spendableAddresses;
+ std::vector<std::string> allAddresses;
+ bool includeZeroValue = true;
+ if(m_wallet->tryGetAvailableAddresses(spendableAddresses, allAddresses, includeZeroValue)) {
+  QStringList listAllAddresses;
+  for(std::string address : allAddresses)
+   if (getAddressTableModel()->labelForAddress(QString::fromStdString(address), true) == label)
+    return QString::fromStdString(address);
+ }
+ return QString::fromStdString("");
+}

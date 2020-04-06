@@ -27,7 +27,7 @@ ContractBookPage::ContractBookPage(const PlatformStyle *platformStyle, QWidget *
         ui->deleteContractInfo->setIcon(QIcon());
         ui->exportButton->setIcon(QIcon());
     } else {
-        ui->newContractInfo->setIcon(platformStyle->MultiStatesIcon(":/icons/add", PlatformStyle::PushButtonLight));
+        ui->newContractInfo->setIcon(platformStyle->MultiStatesIcon(":/icons/add", PlatformStyle::PushButton));
         ui->copyAddress->setIcon(platformStyle->MultiStatesIcon(":/icons/editcopy", PlatformStyle::PushButtonLight));
         ui->deleteContractInfo->setIcon(platformStyle->MultiStatesIcon(":/icons/remove", PlatformStyle::PushButtonLight));
         ui->exportButton->setIcon(platformStyle->MultiStatesIcon(":/icons/export", PlatformStyle::PushButton));
@@ -36,7 +36,7 @@ ContractBookPage::ContractBookPage(const PlatformStyle *platformStyle, QWidget *
     SetObjectStyleSheet(ui->newContractInfo, StyleSheetNames::ButtonLight);
     SetObjectStyleSheet(ui->copyAddress, StyleSheetNames::ButtonLight);
     SetObjectStyleSheet(ui->deleteContractInfo, StyleSheetNames::ButtonLight);
-    SetObjectStyleSheet(ui->exportButton, StyleSheetNames::ButtonGray);
+    SetObjectStyleSheet(ui->exportButton, StyleSheetNames::ButtonLight);
     SetObjectStyleSheet(ui->chooseContractInfo, StyleSheetNames::ButtonGray);
 
     setWindowTitle(tr("Choose the contract for send/call"));

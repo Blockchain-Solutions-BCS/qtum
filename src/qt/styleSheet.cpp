@@ -173,18 +173,18 @@ QString StyleSheet::getCurrentTheme()
 
 QStringList StyleSheet::getSupportedThemes()
 {
-    return QStringList() << "theme4" << "theme3" << "theme2" << "theme1";
+    return QStringList() << "theme5" << "theme4";
 }
 
 QStringList StyleSheet::getSupportedThemesNames()
 {
-    return QStringList() << "BCS official theme" << "Light blue theme" << "Dark blue theme" << "Dark theme";
+    return QStringList() << "Askom Brand Theme" << "BCS official theme";
 }
 
 
 QString StyleSheet::getDefaultTheme()
 {
-    return "theme4";
+    return "theme5";
 }
 
 bool StyleSheet::setTheme(const QString &theme)

@@ -166,6 +166,7 @@ public:
     RecentRequestsTableModel *getRecentRequestsTableModel();
     TokenItemModel *getTokenItemModel();
     TokenTransactionTableModel *getTokenTransactionTableModel();
+    QString getDefaultTokenAddressByLabel(QString label);
 
     EncryptionStatus getEncryptionStatus() const;
 

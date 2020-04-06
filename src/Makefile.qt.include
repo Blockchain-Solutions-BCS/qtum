@@ -445,7 +445,8 @@ RES_IMAGES =
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-RES_TOKENS = qt/res/tokens/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7.png \
+RES_TOKENS = qt/res/tokens/1d99077d3b440f55aa96d09d93c777fc248100bf.png \
+qt/res/tokens/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7.png \
 qt/res/tokens/9d3d4cc1986d81f9109f2b091b7732e7d9bcf63b.png \
 qt/res/tokens/57931faffdec114056a49adfcaa1caac159a1a25.png \
 qt/res/tokens/09800417b097c61b9fd26b3ddde4238304a110d5.png \
@@ -458,112 +459,7 @@ qt/res/tokens/f2033ede578e17fa6231047265010445bca8cf1c.png \
 qt/res/tokens/f2703e93f87b846a7aacec1247beaec1c583daa4.png \
 qt/res/tokens/fe59cbc1704e89a698571413a81f0de9d8f00c69.png
 
-RES_STYLES = qt/res/styles/theme1/buttontransparentbordered.css \
-qt/res/styles/theme1/buttondark.css \
-qt/res/styles/theme1/navgroupbutton.css \
-qt/res/styles/theme1/navbutton.css \
-qt/res/styles/theme1/navsubgroupbutton.css \
-qt/res/styles/theme1/app.css \
-qt/res/styles/theme1/scrollbarlight.css \
-qt/res/styles/theme1/buttonlight.css \
-qt/res/styles/theme1/buttontransparent.css \
-qt/res/styles/theme1/invalid.css \
-qt/res/styles/theme1/treeview.css \
-qt/res/styles/theme1/scrollbardark.css \
-qt/res/styles/theme1/buttongray.css \
-qt/res/styles/theme1/tableviewlight.css \
-qt/res/styles/theme1/config.ini \
-qt/res/styles/theme1/app-icons/down_arrow_unit.png \
-qt/res/styles/theme1/app-icons/toolbutton_right_arrow.png \
-qt/res/styles/theme1/app-icons/spinBoxHover.png \
-qt/res/styles/theme1/app-icons/down_arrow.png \
-qt/res/styles/theme1/app-icons/spinBoxDisabled.png \
-qt/res/styles/theme1/app-icons/checkbox_indeterminate_hover.png \
-qt/res/styles/theme1/app-icons/radiobutton_checked_disabled.png \
-qt/res/styles/theme1/app-icons/up_arrow_disabled.png \
-qt/res/styles/theme1/app-icons/checkbox_unchecked.png \
-qt/res/styles/theme1/app-icons/message_critical.png \
-qt/res/styles/theme1/app-icons/radiobutton_unchecked_hover.png \
-qt/res/styles/theme1/app-icons/checkbox_unchecked_hover.png \
-qt/res/styles/theme1/app-icons/checkbox_indeterminate_disabled.png \
-qt/res/styles/theme1/app-icons/message_warning.png \
-qt/res/styles/theme1/app-icons/radiobutton_checked_hover.png \
-qt/res/styles/theme1/app-icons/cb_up_down_arrow.png \
-qt/res/styles/theme1/app-icons/checkbox_checked_disabled.png \
-qt/res/styles/theme1/app-icons/message_info.png \
-qt/res/styles/theme1/app-icons/radiobutton_unchecked.png \
-qt/res/styles/theme1/app-icons/checkbox_checked.png \
-qt/res/styles/theme1/app-icons/toolbutton_down_arrow.png \
-qt/res/styles/theme1/app-icons/spinBox.png \
-qt/res/styles/theme1/app-icons/up_arrow_hover.png \
-qt/res/styles/theme1/app-icons/radiobutton_checked.png \
-qt/res/styles/theme1/app-icons/slider_switcher_disabled.png \
-qt/res/styles/theme1/app-icons/radiobutton_unchecked_disabled.png \
-qt/res/styles/theme1/app-icons/up_arrow.png \
-qt/res/styles/theme1/app-icons/spinBoxFocus.png \
-qt/res/styles/theme1/app-icons/slider_switcher.png \
-qt/res/styles/theme1/app-icons/down_arrow_hover.png \
-qt/res/styles/theme1/app-icons/checkbox_indeterminate.png \
-qt/res/styles/theme1/app-icons/message_question.png \
-qt/res/styles/theme1/app-icons/checkbox_checked_hover.png \
-qt/res/styles/theme1/app-icons/down_arrow_disabled.png \
-qt/res/styles/theme1/app-icons/slider_switcher_hover.png \
-qt/res/styles/theme1/app-icons/checkbox_unchecked_disabled.png \
-qt/res/styles/theme1/app-icons/splash_bg.png \
-qt/res/styles/theme1/app-icons/bg.png \
-qt/res/styles/theme2/app.css \
-qt/res/styles/theme2/config.ini \
-qt/res/styles/theme2/buttontransparent.css \
-qt/res/styles/theme2/scrollbardark.css \
-qt/res/styles/theme2/treeview.css \
-qt/res/styles/theme2/navgroupbutton.css \
-qt/res/styles/theme2/navbutton.css \
-qt/res/styles/theme2/navsubgroupbutton.css \
-qt/res/styles/theme2/tableviewlight.css \
-qt/res/styles/theme2/invalid.css \
-qt/res/styles/theme2/app-icons/up_arrow.png \
-qt/res/styles/theme2/app-icons/up_arrow_hover.png \
-qt/res/styles/theme2/app-icons/up_arrow_disabled.png \
-qt/res/styles/theme2/app-icons/down_arrow.png \
-qt/res/styles/theme2/app-icons/down_arrow_hover.png \
-qt/res/styles/theme2/app-icons/down_arrow_disabled.png \
-qt/res/styles/theme2/app-icons/checkbox_checked.png \
-qt/res/styles/theme2/app-icons/checkbox_checked_disabled.png \
-qt/res/styles/theme2/app-icons/checkbox_checked_hover.png \
-qt/res/styles/theme2/app-icons/checkbox_indeterminate.png \
-qt/res/styles/theme2/app-icons/checkbox_indeterminate_disabled.png \
-qt/res/styles/theme2/app-icons/checkbox_indeterminate_hover.png \
-qt/res/styles/theme2/app-icons/checkbox_unchecked.png \
-qt/res/styles/theme2/app-icons/checkbox_unchecked_disabled.png \
-qt/res/styles/theme2/app-icons/checkbox_unchecked_hover.png \
-qt/res/styles/theme2/app-icons/radiobutton_checked.png \
-qt/res/styles/theme2/app-icons/radiobutton_checked_disabled.png \
-qt/res/styles/theme2/app-icons/radiobutton_checked_hover.png \
-qt/res/styles/theme2/app-icons/radiobutton_unchecked.png \
-qt/res/styles/theme2/app-icons/radiobutton_unchecked_disabled.png \
-qt/res/styles/theme2/app-icons/radiobutton_unchecked_hover.png \
-qt/res/styles/theme2/app-icons/slider_switcher.png \
-qt/res/styles/theme2/app-icons/slider_switcher_disabled.png \
-qt/res/styles/theme2/app-icons/slider_switcher_hover.png \
-qt/res/styles/theme2/app-icons/cb_up_down_arrow.png \
-qt/res/styles/theme2/app-icons/right_arrow.png \
-qt/res/styles/theme2/app-icons/down_arrow_unit.png \
-qt/res/styles/theme2/app-icons/splash_bg.png \
-qt/res/styles/theme2/app-icons/bg.png \
-qt/res/styles/theme3/app.css \
-qt/res/styles/theme3/config.ini \
-qt/res/styles/theme3/buttontransparent.css \
-qt/res/styles/theme3/scrollbardark.css \
-qt/res/styles/theme3/treeview.css \
-qt/res/styles/theme3/navgroupbutton.css \
-qt/res/styles/theme3/navbutton.css \
-qt/res/styles/theme3/navsubgroupbutton.css \
-qt/res/styles/theme3/tableviewlight.css \
-qt/res/styles/theme3/invalid.css \
-qt/res/styles/theme3/app-icons/down_arrow_unit.png \
-qt/res/styles/theme3/app-icons/splash_bg.png \
-qt/res/styles/theme3/app-icons/bg.png \
-qt/res/styles/theme4/buttontransparentbordered.css \
+RES_STYLES = qt/res/styles/theme4/buttontransparentbordered.css \
 qt/res/styles/theme4/buttondark.css \
 qt/res/styles/theme4/navgroupbutton.css \
 qt/res/styles/theme4/navbutton.css \
@@ -615,7 +511,61 @@ qt/res/styles/theme4/app-icons/down_arrow_disabled.png \
 qt/res/styles/theme4/app-icons/slider_switcher_hover.png \
 qt/res/styles/theme4/app-icons/checkbox_unchecked_disabled.png \
 qt/res/styles/theme4/app-icons/splash_bg.png \
-qt/res/styles/theme4/app-icons/bg.png
+qt/res/styles/theme4/app-icons/bg.png \
+qt/res/styles/theme5/buttontransparentbordered.css \
+qt/res/styles/theme5/buttondark.css \
+qt/res/styles/theme5/navgroupbutton.css \
+qt/res/styles/theme5/navbutton.css \
+qt/res/styles/theme5/navsubgroupbutton.css \
+qt/res/styles/theme5/app.css \
+qt/res/styles/theme5/scrollbarlight.css \
+qt/res/styles/theme5/buttonlight.css \
+qt/res/styles/theme5/buttontransparent.css \
+qt/res/styles/theme5/invalid.css \
+qt/res/styles/theme5/treeview.css \
+qt/res/styles/theme5/scrollbardark.css \
+qt/res/styles/theme5/buttongray.css \
+qt/res/styles/theme5/tableviewlight.css \
+qt/res/styles/theme5/config.ini \
+qt/res/styles/theme5/app-icons/down_arrow_unit.png \
+qt/res/styles/theme5/app-icons/toolbutton_right_arrow.png \
+qt/res/styles/theme5/app-icons/spinBoxHover.png \
+qt/res/styles/theme5/app-icons/down_arrow.png \
+qt/res/styles/theme5/app-icons/spinBoxDisabled.png \
+qt/res/styles/theme5/app-icons/checkbox_indeterminate_hover.png \
+qt/res/styles/theme5/app-icons/radiobutton_checked_disabled.png \
+qt/res/styles/theme5/app-icons/up_arrow_disabled.png \
+qt/res/styles/theme5/app-icons/checkbox_unchecked.png \
+qt/res/styles/theme5/app-icons/message_critical.png \
+qt/res/styles/theme5/app-icons/radiobutton_unchecked_hover.png \
+qt/res/styles/theme5/app-icons/checkbox_unchecked_hover.png \
+qt/res/styles/theme5/app-icons/checkbox_indeterminate_disabled.png \
+qt/res/styles/theme5/app-icons/message_warning.png \
+qt/res/styles/theme5/app-icons/radiobutton_checked_hover.png \
+qt/res/styles/theme5/app-icons/cb_up_down_arrow.png \
+qt/res/styles/theme5/app-icons/checkbox_checked_disabled.png \
+qt/res/styles/theme5/app-icons/message_info.png \
+qt/res/styles/theme5/app-icons/radiobutton_unchecked.png \
+qt/res/styles/theme5/app-icons/checkbox_checked.png \
+qt/res/styles/theme5/app-icons/toolbutton_down_arrow.png \
+qt/res/styles/theme5/app-icons/spinBox.png \
+qt/res/styles/theme5/app-icons/up_arrow_hover.png \
+qt/res/styles/theme5/app-icons/radiobutton_checked.png \
+qt/res/styles/theme5/app-icons/slider_switcher_disabled.png \
+qt/res/styles/theme5/app-icons/radiobutton_unchecked_disabled.png \
+qt/res/styles/theme5/app-icons/up_arrow.png \
+qt/res/styles/theme5/app-icons/spinBoxFocus.png \
+qt/res/styles/theme5/app-icons/slider_switcher.png \
+qt/res/styles/theme5/app-icons/down_arrow_hover.png \
+qt/res/styles/theme5/app-icons/checkbox_indeterminate.png \
+qt/res/styles/theme5/app-icons/message_question.png \
+qt/res/styles/theme5/app-icons/checkbox_checked_hover.png \
+qt/res/styles/theme5/app-icons/down_arrow_disabled.png \
+qt/res/styles/theme5/app-icons/slider_switcher_hover.png \
+qt/res/styles/theme5/app-icons/checkbox_unchecked_disabled.png \
+qt/res/styles/theme5/app-icons/splash_bg.png \
+qt/res/styles/theme5/app-icons/bg.png
+
 
 BITCOIN_RC = qt/res/bitcoin-qt-res.rc
 

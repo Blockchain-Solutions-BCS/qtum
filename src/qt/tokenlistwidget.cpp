@@ -18,6 +18,7 @@
 #include <QAbstractItemModel>
 #include <QSortFilterProxyModel>
 
+#include <qt/addresstablemodel.h>
 
 #include <QObject>
 
@@ -39,6 +40,21 @@ TokenListWidget::TokenListWidget(const PlatformStyle *platformStyle, QWidget *pa
 void TokenListWidget::setModel(WalletModel *_model)
 {
     m_model = _model;
+
+    interfaces::TokenInfo tokenInfo;
+    tokenInfo.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
+    tokenInfo.token_name = "Ascoin";
+    tokenInfo.token_symbol = "ASC";
+    tokenInfo.decimals = 4; //или другое число
+    std::string label = "Ascoin Default Address"; //или любой другой label, по которому будет привязываться данный токен
+    if (m_model-> getDefaultTokenAddressByLabel(QString::fromStdString(label)).toStdString() != "") {
+     tokenInfo.sender_address = m_model-> getDefaultTokenAddressByLabel(QString::fromStdString(label)).toStdString();
+    }
+    else {
+     tokenInfo.sender_address = m_model->getAddressTableModel()->addRow(AddressTableModel::Receive, QString::fromStdString(label), "", m_model->wallet().getDefaultAddressType()).toStdString();
+    }
+    m_model->wallet().addTokenEntry(tokenInfo);
+
     if(m_model && m_model->getTokenItemModel())
     {
         // Sort tokens by symbol
