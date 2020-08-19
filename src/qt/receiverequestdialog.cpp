@@ -216,11 +216,26 @@ bool ReceiveRequestDialog::refreshAddress()
 
     /* Generate new receiving address */
     OutputType address_type = model->wallet().getDefaultAddressType();
-    info.address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, info.label, "", address_type);
 
+
+    interfaces::TokenInfo tokenInfo;
+    std::string defaultLabel = "Ascoin Default Address";
+    tokenInfo.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
+    tokenInfo.token_name = "Ascoin";
+    tokenInfo.token_symbol = "ASC";
+    tokenInfo.decimals = 4;
+    tokenInfo.sender_address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, info.label, "", address_type).toStdString();
+
+
+    if (!model->wallet().existTokenEntry(tokenInfo) && model->wallet().getTokens().size() < 1)
+    {
+        model->wallet().addTokenEntry(tokenInfo);
+    }
+
+    info.address = QString::fromStdString(tokenInfo.sender_address);
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
-
+    
     return true;
 }
 
