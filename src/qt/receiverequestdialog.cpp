@@ -212,27 +212,50 @@ bool ReceiveRequestDialog::createQRCode(QLabel *label, SendCoinsRecipient _info,
 bool ReceiveRequestDialog::refreshAddress()
 {
     if(!model || !model->getAddressTableModel() || !model->getRecentRequestsTableModel())
+    {
         return false;
+    }
 
     /* Generate new receiving address */
     OutputType address_type = model->wallet().getDefaultAddressType();
 
-
-    interfaces::TokenInfo tokenInfo;
-    std::string defaultLabel = "Ascoin Default Address";
-    tokenInfo.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
-    tokenInfo.token_name = "Ascoin";
-    tokenInfo.token_symbol = "ASC";
-    tokenInfo.decimals = 4;
-    tokenInfo.sender_address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, info.label, "", address_type).toStdString();
+    interfaces::TokenInfo Bitcoin, Ascoin;
+    std::string defaultAddress;
 
 
-    if (!model->wallet().existTokenEntry(tokenInfo) && model->wallet().getTokens().size() < 1)
+    std::vector<std::string> allAddresses;
+    std::vector<std::string> spendableAddresses;
+    bool includeZeroValue = true;
+    model->wallet().tryGetAvailableAddresses(spendableAddresses, allAddresses, includeZeroValue);
+
+    defaultAddress = model->getAddressTableModel()->addRow(AddressTableModel::Receive, info.label, "", address_type).toStdString();
+
+    Bitcoin.contract_address = "ff8d7c940da8357484c21c3d12cbb017ed4614a3";
+    Bitcoin.token_name = "Bitcoin";
+    Bitcoin.token_symbol = "BTC";
+    Bitcoin.decimals = 8;
+    Bitcoin.sender_address = defaultAddress;
+
+    Ascoin.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
+    Ascoin.token_name = "Ascoin";
+    Ascoin.token_symbol = "ASC";
+    Ascoin.decimals = 4;
+    Ascoin.sender_address = defaultAddress;
+
+    std::vector<interfaces::TokenInfo> tokens;
+
+    tokens.emplace_back(Bitcoin);
+    tokens.emplace_back(Ascoin);
+
+    for (interfaces::TokenInfo token : tokens)
     {
-        model->wallet().addTokenEntry(tokenInfo);
+        if (!model->wallet().existTokenEntry(token) && model->wallet().getTokens().size() < tokens.size())
+        {
+            model->wallet().addTokenEntry(token);
+        }
     }
 
-    info.address = QString::fromStdString(tokenInfo.sender_address);
+    info.address = QString::fromStdString(defaultAddress);
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
     
