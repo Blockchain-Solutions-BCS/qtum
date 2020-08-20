@@ -286,27 +286,13 @@ bool ReceiveRequestDialog::getDefaultAddress()
 
 void ReceiveRequestDialog::fillToken(std::string _defaultAddress)
 {
-    Bitcoin.contract_address = "ff8d7c940da8357484c21c3d12cbb017ed4614a3";
-    Bitcoin.token_name = "Bitcoin";
-    Bitcoin.token_symbol = "BTC";
-    Bitcoin.decimals = 8;
-    Bitcoin.sender_address = _defaultAddress;
-
     Ascoin.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
     Ascoin.token_name = "Ascoin";
     Ascoin.token_symbol = "ASC";
     Ascoin.decimals = 4;
     Ascoin.sender_address = _defaultAddress;
 
-    Overlord.contract_address = "83a1a4382afd063dbfbf8e9fdeebe24b7b04041b";
-    Overlord.token_name = "OVERLORD TOKEN";
-    Overlord.token_symbol = "OVERLORD";
-    Overlord.decimals = 8;
-    Overlord.sender_address = _defaultAddress;
-
-    tokens.emplace_back(Bitcoin);
     tokens.emplace_back(Ascoin);
-    tokens.emplace_back(Overlord);
 }
 
 bool comp(interfaces::TokenInfo T1,interfaces::TokenInfo T2) { return (T1.contract_address < T2.contract_address); }
