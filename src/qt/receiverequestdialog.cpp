@@ -273,12 +273,10 @@ bool ReceiveRequestDialog::getDefaultAddress()
             fillToken(defaultAddress);
 
             addIfNotExist(tokens);
-            std::cout << "if exits: " << defaultAddress << std::endl;
         }
         else
         {
             addIfNotExist(tokens);
-            std::cout << "else exits\n";
         }
     }
     
