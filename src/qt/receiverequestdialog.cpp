@@ -218,47 +218,12 @@ bool ReceiveRequestDialog::refreshAddress()
 
     /* Generate new receiving address */
     OutputType address_type = model->wallet().getDefaultAddressType();
+    info.address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, info.label, "", address_type);
 
-    interfaces::TokenInfo Bitcoin, Ascoin;
-    std::string defaultAddress;
+    fillToken(info.address.toStdString());
 
-
-    std::vector<std::string> allAddresses;
-    std::vector<std::string> spendableAddresses;
-    bool includeZeroValue = true;
-    model->wallet().tryGetAvailableAddresses(spendableAddresses, allAddresses, includeZeroValue);
-
-    defaultAddress = model->getAddressTableModel()->addRow(AddressTableModel::Receive, info.label, "", address_type).toStdString();
-
-    Bitcoin.contract_address = "ff8d7c940da8357484c21c3d12cbb017ed4614a3";
-    Bitcoin.token_name = "Bitcoin";
-    Bitcoin.token_symbol = "BTC";
-    Bitcoin.decimals = 8;
-    Bitcoin.sender_address = defaultAddress;
-
-    Ascoin.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
-    Ascoin.token_name = "Ascoin";
-    Ascoin.token_symbol = "ASC";
-    Ascoin.decimals = 4;
-    Ascoin.sender_address = defaultAddress;
-
-    std::vector<interfaces::TokenInfo> tokens;
-
-    tokens.emplace_back(Bitcoin);
-    tokens.emplace_back(Ascoin);
-
-    for (interfaces::TokenInfo token : tokens)
-    {
-        if (!model->wallet().existTokenEntry(token) && model->wallet().getTokens().size() < tokens.size())
-        {
-            model->wallet().addTokenEntry(token);
-        }
-    }
-
-    info.address = QString::fromStdString(defaultAddress);
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
-    
     return true;
 }
 
@@ -286,9 +251,129 @@ bool ReceiveRequestDialog::getDefaultAddress()
     {
         info = SendCoinsRecipient();
         refreshAddress();
+        addIfNotExist(tokens);
+    }
+
+    std::vector<std::string> spendableAddresses;
+    std::vector<std::string> allAddresses;
+    bool includeZeroValue = false;
+    
+    std::string defaultAddress;
+    fillToken("");
+
+    std::vector<interfaces::TokenInfo> tokensInWallet = model->wallet().getTokens();
+
+    if(!isMyTokensExist())
+    {
+        if(model->wallet().tryGetAvailableAddresses(spendableAddresses, allAddresses, includeZeroValue) && allAddresses.size() > 0)   
+        {
+            tokens.clear();
+            
+            defaultAddress = allAddresses[0];
+            fillToken(defaultAddress);
+
+            addIfNotExist(tokens);
+            std::cout << "if exits: " << defaultAddress << std::endl;
+        }
+        else
+        {
+            addIfNotExist(tokens);
+            std::cout << "else exits\n";
+        }
     }
     
+    
     return !info.address.isEmpty();
+}
+
+void ReceiveRequestDialog::fillToken(std::string _defaultAddress)
+{
+    Bitcoin.contract_address = "ff8d7c940da8357484c21c3d12cbb017ed4614a3";
+    Bitcoin.token_name = "Bitcoin";
+    Bitcoin.token_symbol = "BTC";
+    Bitcoin.decimals = 8;
+    Bitcoin.sender_address = _defaultAddress;
+
+    Ascoin.contract_address = "1d99077d3b440f55aa96d09d93c777fc248100bf";
+    Ascoin.token_name = "Ascoin";
+    Ascoin.token_symbol = "ASC";
+    Ascoin.decimals = 4;
+    Ascoin.sender_address = _defaultAddress;
+
+    Overlord.contract_address = "83a1a4382afd063dbfbf8e9fdeebe24b7b04041b";
+    Overlord.token_name = "OVERLORD TOKEN";
+    Overlord.token_symbol = "OVERLORD";
+    Overlord.decimals = 8;
+    Overlord.sender_address = _defaultAddress;
+
+    tokens.emplace_back(Bitcoin);
+    tokens.emplace_back(Ascoin);
+    tokens.emplace_back(Overlord);
+}
+
+bool comp(interfaces::TokenInfo T1,interfaces::TokenInfo T2) { return (T1.contract_address < T2.contract_address); }
+
+bool ReceiveRequestDialog::isMyTokensExist()
+{
+    std::vector<interfaces::TokenInfo> tokensInWallet = model->wallet().getTokens();
+    std::vector<bool> valid = {false, false, false};
+
+    std::sort(tokens.begin(), tokens.end(), comp);
+    std::sort(tokensInWallet.begin(), tokensInWallet.end(), comp);
+
+    if (tokensInWallet.empty())
+    {
+        return false;
+    }
+    else
+    {
+        for (int i = 0; i < tokens.size(); i++)
+        {
+            for (auto token : tokensInWallet)
+            {
+                if (tokens[i].contract_address == token.contract_address)
+                {
+                    valid[i] = true;
+                }
+            }
+        }
+    }
+
+    for(auto param : valid)
+    {
+        if (param == false)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void ReceiveRequestDialog::addIfNotExist(std::vector<interfaces::TokenInfo> &_tokens)
+{
+    std::vector<interfaces::TokenInfo> tokensInWallet = model->wallet().getTokens();
+
+    std::sort(_tokens.begin(), _tokens.end(), comp);
+    std::sort(tokensInWallet.begin(), tokensInWallet.end(), comp);
+
+    if (tokensInWallet.empty())
+    {
+        for (auto myToken : _tokens)
+            model->wallet().addTokenEntry(myToken);
+    }
+    else
+    {
+        for (auto myToken : _tokens)
+        {
+            for (auto token : tokensInWallet)
+            {
+                if (myToken.contract_address != token.contract_address)
+                {
+                    model->wallet().addTokenEntry(myToken);
+                }
+            }
+        }
+    }
 }
 
 void ReceiveRequestDialog::update()

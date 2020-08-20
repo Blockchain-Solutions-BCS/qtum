@@ -77,13 +77,19 @@ private Q_SLOTS:
 private:
     bool refreshAddress();
     bool getDefaultAddress();
-
+    void fillToken(std::string _defaultAddress);
+    void addIfNotExist(std::vector<interfaces::TokenInfo> &_tokens);
+    bool isMyTokensExist();
+    // bool comp(interfaces::TokenInfo T1,interfaces::TokenInfo T2);
 private:
     Ui::ReceiveRequestDialog *ui;
     WalletModel *model;
     SendCoinsRecipient info;
     const PlatformStyle *platformStyle;
     ReceiveCoinsDialog* requestPaymentDialog;
+
+    interfaces::TokenInfo Bitcoin, Ascoin, Overlord;
+    std::vector<interfaces::TokenInfo> tokens;
 };
 
 #endif // BITCOIN_QT_RECEIVEREQUESTDIALOG_H
