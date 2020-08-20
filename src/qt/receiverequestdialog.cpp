@@ -300,7 +300,7 @@ bool comp(interfaces::TokenInfo T1,interfaces::TokenInfo T2) { return (T1.contra
 bool ReceiveRequestDialog::isMyTokensExist()
 {
     std::vector<interfaces::TokenInfo> tokensInWallet = model->wallet().getTokens();
-    std::vector<bool> valid = {false, false, false};
+    std::vector<bool> valid = {false};
 
     std::sort(tokens.begin(), tokens.end(), comp);
     std::sort(tokensInWallet.begin(), tokensInWallet.end(), comp);
