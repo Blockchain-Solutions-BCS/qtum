@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -761,7 +763,7 @@ private:
      * Wallet staking coins.
      */
     boost::thread_group* stakeThread = nullptr;
-    void StakeQtums(bool fStake, CConnman* connman);
+    void StakeBCSs(bool fStake, CConnman* connman);
 
 public:
     /*
@@ -1319,10 +1321,10 @@ public:
     /* Remove token entry from the wallet */
     bool RemoveTokenEntry(const uint256& tokenHash, bool fFlushOnClose=true);
 
-    /* Start staking qtums */
+    /* Start staking bcss */
     void StartStake(CConnman* connman = CWallet::defaultConnman);
 
-    /* Stop staking qtums */
+    /* Stop staking bcss */
     void StopStake();
 
     /* Clean token transaction entries in the wallet */

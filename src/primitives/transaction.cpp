@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -114,7 +116,7 @@ std::string CTransaction::ToString() const
     return str;
 }
 
-///////////////////////////////////////////////////////////// qtum
+///////////////////////////////////////////////////////////// bcs
 bool CTransaction::HasCreateOrCall() const{
     for(const CTxOut& v : vout){
         if(v.scriptPubKey.HasOpCreate() || v.scriptPubKey.HasOpCall()){

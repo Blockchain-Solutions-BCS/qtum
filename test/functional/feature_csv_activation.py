@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2015-2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test activation of the first version bits soft fork.
@@ -62,7 +64,7 @@ from test_framework.util import (
     hex_str_to_bytes,
     bytes_to_hex_str
 )
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 
 BASE_RELATIVE_LOCKTIME = 10
 SEQ_DISABLE_FLAG = 1 << 31

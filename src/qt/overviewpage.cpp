@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -51,7 +53,7 @@ public:
         QAbstractItemDelegate(parent), unit(BitcoinUnits::BTC),
         platformStyle(_platformStyle)
     {
-        background_color_selected = GetStringStyleValue("txviewdelegate/background-color-selected", "#009ee5");
+        background_color_selected = GetStringStyleValue("txviewdelegate/background-color-selected", "#bb9f89");
         background_color = GetStringStyleValue("txviewdelegate/background-color", "#393939");
         alternate_background_color = GetStringStyleValue("txviewdelegate/alternate-background-color", "#2e2e2e");
         foreground_color = GetStringStyleValue("txviewdelegate/foreground-color", "#dedede");

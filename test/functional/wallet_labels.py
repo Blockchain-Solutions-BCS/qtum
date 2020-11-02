@@ -13,8 +13,8 @@ from collections import defaultdict
 
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
-from test_framework.qtum import convert_btc_address_to_qtum
+from test_framework.bcsconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.bcs import convert_btc_address_to_bcs
 
 class WalletLabelsTest(BitcoinTestFramework):
     def set_test_params(self):
@@ -50,7 +50,7 @@ class WalletLabelsTest(BitcoinTestFramework):
             linked_addresses.add(address_group[0][0])
 
         # send 50 from each address to a third address not in this wallet
-        common_address = convert_btc_address_to_qtum("msf4WtN1YQKXvNtvdFYt9JBnUD2FB41kjr")
+        common_address = convert_btc_address_to_bcs("msf4WtN1YQKXvNtvdFYt9JBnUD2FB41kjr")
         node.sendmany(
             amounts={common_address: 2*INITIAL_BLOCK_REWARD},
             subtractfeefrom=[common_address],

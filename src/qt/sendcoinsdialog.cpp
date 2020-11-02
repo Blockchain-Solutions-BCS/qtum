@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -777,18 +779,22 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
         }
         else if (!IsValidDestination(dest)) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Qtum address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid BCS address"));
         }
         else // Valid address
         {
             if (!model->wallet().isSpendable(dest)) {
                 ui->labelCoinControlChangeLabel->setText(tr("Warning: Unknown change address"));
 
-                // confirmation dialog
-                QMessageBox::StandardButton btnRetVal = QMessageBox::question(this, tr("Confirm custom change address"), tr("The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?"),
-                    QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+                // confirmation dialog				
+				QMessageBox msgBox(QMessageBox::Question, tr("Confirm custom change address"),
+					tr("The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?"),
+					QMessageBox::Yes | QMessageBox::Cancel);
+			
+				msgBox.setButtonText(QMessageBox::Yes, tr("Yes"));
+				msgBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
 
-                if(btnRetVal == QMessageBox::Yes)
+                if(msgBox.exec() == QMessageBox::Yes)
                     CoinControlDialog::coinControl()->destChange = dest;
                 else
                 {
@@ -861,6 +867,7 @@ SendConfirmationDialog::SendConfirmationDialog(const QString &title, const QStri
     QMessageBox(QMessageBox::Question, title, text, QMessageBox::Yes | QMessageBox::Cancel, parent), secDelay(_secDelay)
 {
     setDefaultButton(QMessageBox::Cancel);
+	setButtonText(QMessageBox::Cancel, tr("Cancel"));
     yesButton = button(QMessageBox::Yes);
     updateYesButton();
     connect(&countDownTimer, &QTimer::timeout, this, &SendConfirmationDialog::countDown);

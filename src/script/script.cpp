@@ -1,5 +1,7 @@
 ﻿// Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -209,7 +211,7 @@ bool CScript::IsPayToScriptHash() const
             (*this)[22] == OP_EQUAL);
 }
 
-///////////////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////////////// // bcs
 bool CScript::IsPayToPubkey() const
 {
     if (this->size() == 35 && (*this)[0] == 33 && (*this)[34] == OP_CHECKSIG

@@ -1,5 +1,5 @@
-#ifndef QTUM_QT_STAKEPAGE_H
-#define QTUM_QT_STAKEPAGE_H
+#ifndef BCS_QT_STAKEPAGE_H
+#define BCS_QT_STAKEPAGE_H
 
 #include <interfaces/wallet.h>
 
@@ -62,4 +62,4 @@ private:
     void updateAnnualROI();
 };
 
-#endif // QTUM_QT_STAKEPAGE_H
+#endif // BCS_QT_STAKEPAGE_H

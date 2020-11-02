@@ -1,4 +1,6 @@
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -457,7 +459,7 @@ d2hj739GDLz0b5KuJ2SG6VknMRQM976w/m2qlq0ccVGaaZ2zMIGfpzL3p6adwx/5\
 ";
 
 //
-// Payment request with amount overflow (amount is set to 107822406.26 QTUM)
+// Payment request with amount overflow (amount is set to 107822406.26 BCS)
 //
 const char* paymentrequest5_cert2_BASE64 =
 "Egt4NTA5K3NoYTI1NhryBArvBDCCAmswggFToAMCAQICAQEwDQYJKoZIhvcNAQELBQAwITEfMB0G\

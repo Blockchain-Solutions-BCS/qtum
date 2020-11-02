@@ -7,7 +7,7 @@ from decimal import Decimal
 
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD
+from test_framework.bcsconfig import INITIAL_BLOCK_REWARD
 
 class TxnMallTest(BitcoinTestFramework):
     def set_test_params(self):

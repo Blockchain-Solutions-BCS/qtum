@@ -92,7 +92,7 @@
            <item row="5" column="0">
             <widget class="QLabel" name="label_3">
              <property name="toolTip">
-              <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</string>
+              <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BCS network.</string>
              </property>
              <property name="text">
               <string>&amp;Message:</string>
@@ -105,7 +105,7 @@
            <item row="5" column="2">
             <widget class="QLineEdit" name="reqMessage">
              <property name="toolTip">
-              <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</string>
+              <string>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BCS network.</string>
              </property>
             </widget>
            </item>
@@ -256,7 +256,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QtumPushButton" name="showRequestButton">
+         <widget class="BCSPushButton" name="showRequestButton">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -298,7 +298,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QtumPushButton" name="removeRequestButton">
+         <widget class="BCSPushButton" name="removeRequestButton">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -430,9 +430,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QtumPushButton</class>
+   <class>BCSPushButton</class>
    <extends>QPushButton</extends>
-   <header>qt/qtumpushbutton.h</header>
+   <header>qt/bcspushbutton.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

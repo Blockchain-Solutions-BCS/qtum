@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,6 +33,9 @@ AskPassphraseDialog::AskPassphraseDialog(Mode _mode, QWidget *parent) :
 
     SetObjectStyleSheet(ui->buttonBox->button(QDialogButtonBox::Cancel), StyleSheetNames::ButtonLight);
     SetObjectStyleSheet(ui->buttonBox->button(QDialogButtonBox::Ok), StyleSheetNames::ButtonGray);
+	
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("OK"));
+	ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 
     ui->passEdit1->setMinimumSize(ui->passEdit1->sizeHint());
     ui->passEdit2->setMinimumSize(ui->passEdit2->sizeHint());
@@ -122,11 +127,14 @@ void AskPassphraseDialog::accept()
             // Cannot encrypt with empty passphrase
             break;
         }
-        QMessageBox::StandardButton retval = QMessageBox::question(this, tr("Confirm wallet encryption"),
-                 tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR QTUMS</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
-                 QMessageBox::Yes|QMessageBox::Cancel,
-                 QMessageBox::Cancel);
-        if(retval == QMessageBox::Yes)
+        QMessageBox msgBox(QMessageBox::Question, tr("Confirm wallet encryption"),
+                 tr("Warning: If you encrypt your wallet and lose your passphrase, you will <b>LOSE ALL OF YOUR BCSS</b>!") + "<br><br>" + tr("Are you sure you wish to encrypt your wallet?"),
+                 QMessageBox::Yes|QMessageBox::Cancel);
+				 
+		msgBox.setButtonText(QMessageBox::Yes, tr("Yes"));
+		msgBox.setButtonText(QMessageBox::Cancel, tr("Cancel"));
+		
+        if(msgBox.exec() == QMessageBox::Yes)
         {
             if(newpass1 == newpass2)
             {
@@ -136,7 +144,7 @@ void AskPassphraseDialog::accept()
                                          "<qt>" +
                                          tr("Your wallet is now encrypted. "
                                          "Remember that encrypting your wallet cannot fully protect "
-                                         "your qtums from being stolen by malware infecting your computer.").arg(tr(PACKAGE_NAME)) +
+                                         "your bcss from being stolen by malware infecting your computer.").arg(tr(PACKAGE_NAME)) +
                                          "<br><br><b>" +
                                          tr("IMPORTANT: Any previous backups you have made of your wallet file "
                                          "should be replaced with the newly generated, encrypted wallet file. "

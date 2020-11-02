@@ -130,7 +130,7 @@ void StakePage::numBlocksChanged(int count, const QDateTime &, double, bool head
 void StakePage::updateSubsidy()
 {
     int unit = walletModel->getOptionsModel()->getDisplayUnit();
-    QString strSubsidy = BitcoinUnits::formatWithUnit(unit, m_subsidy, false, BitcoinUnits::separatorAlways) + "/Block";
+    QString strSubsidy = BitcoinUnits::formatWithUnit(unit, m_subsidy, false, BitcoinUnits::separatorAlways) + tr("/Block");
     ui->labelReward->setText(strSubsidy);
 }
 

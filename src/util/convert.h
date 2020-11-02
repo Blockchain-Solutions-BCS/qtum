@@ -1,7 +1,7 @@
-#ifndef QTUM_CONVERT_H
-#define QTUM_CONVERT_H
+#ifndef BCS_CONVERT_H
+#define BCS_CONVERT_H
 
-////////////////////////////////////////////////////// qtum
+////////////////////////////////////////////////////// bcs
 #include <uint256.h>
 #include <libdevcore/Common.h>
 #include <libdevcore/CommonData.h>
@@ -35,4 +35,4 @@ inline uint256 u256Touint(const dev::u256& in)
 }
 //////////////////////////////////////////////////////
 
-#endif // QTUM_CONVERT_H
+#endif // BCS_CONVERT_H

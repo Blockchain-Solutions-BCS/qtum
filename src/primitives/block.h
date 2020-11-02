@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,8 +32,8 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
-    uint256 hashStateRoot; // qtum
-    uint256 hashUTXORoot; // qtum
+    uint256 hashStateRoot; // bcs
+    uint256 hashUTXORoot; // bcs
     // proof-of-stake specific fields
     COutPoint prevoutStake;
 
@@ -45,8 +47,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        READWRITE(hashStateRoot); // qtum
-        READWRITE(hashUTXORoot); // qtum
+        READWRITE(hashStateRoot); // bcs
+        READWRITE(hashUTXORoot); // bcs
         READWRITE(prevoutStake);
     }
 };
@@ -72,8 +74,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        READWRITE(hashStateRoot); // qtum
-        READWRITE(hashUTXORoot); // qtum
+        READWRITE(hashStateRoot); // bcs
+        READWRITE(hashUTXORoot); // bcs
         READWRITE(prevoutStake);
         READWRITE(vchBlockSig);
     }
@@ -86,8 +88,8 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
-        hashStateRoot.SetNull(); // qtum
-        hashUTXORoot.SetNull(); // qtum
+        hashStateRoot.SetNull(); // bcs
+        hashUTXORoot.SetNull(); // bcs
         vchBlockSig.clear();
         prevoutStake.SetNull();
     }
@@ -107,7 +109,7 @@ public:
     }
     
     // ppcoin: two types of block: proof-of-work or proof-of-stake
-    virtual bool IsProofOfStake() const //qtum
+    virtual bool IsProofOfStake() const //bcs
     {
         return !prevoutStake.IsNull();
     }
@@ -127,7 +129,7 @@ public:
         return ret;
     }
 
-    CBlockHeader& operator=(const CBlockHeader& other) //qtum
+    CBlockHeader& operator=(const CBlockHeader& other) //bcs
     {
         if (this != &other)
         {
@@ -182,7 +184,7 @@ public:
         fChecked = false;
     }
 
-    std::pair<COutPoint, unsigned int> GetProofOfStake() const //qtum
+    std::pair<COutPoint, unsigned int> GetProofOfStake() const //bcs
     {
         return IsProofOfStake()? std::make_pair(prevoutStake, nTime) : std::make_pair(COutPoint(), (unsigned int)0);
     }
@@ -196,8 +198,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
-        block.hashStateRoot  = hashStateRoot; // qtum
-        block.hashUTXORoot   = hashUTXORoot; // qtum
+        block.hashStateRoot  = hashStateRoot; // bcs
+        block.hashUTXORoot   = hashUTXORoot; // bcs
         block.vchBlockSig    = vchBlockSig;
         block.prevoutStake   = prevoutStake;
         return block;

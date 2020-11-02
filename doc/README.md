@@ -1,30 +1,30 @@
-Qtum Core
+BCS Core
 =============
 
 Setup
 ---------------------
-Qtum Core is the original Qtum client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Qtum transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+BCS Core is the original BCS client and it builds the backbone of the network. It downloads and, by default, stores the entire history of BCS transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Qtum Core, visit [qtumcore.org](https://www.qtumcore.org/).
+To download BCS Core, visit [bcscore.org](https://www.bcscore.org/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Qtum Core on your native platform.
+The following are some helpful notes on how to run BCS Core on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/qtum-qt` (GUI) or
-- `bin/qtumd` (headless)
+- `bin/bcs-qt` (GUI) or
+- `bin/bcsd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run qtum-qt.exe.
+Unpack the files into a directory, and then run bcs-qt.exe.
 
 ### macOS
 
-Drag Qtum Core to your applications folder, and then run Qtum Core.
+Drag BCS Core to your applications folder, and then run BCS Core.
 
 ### Need Help?
 

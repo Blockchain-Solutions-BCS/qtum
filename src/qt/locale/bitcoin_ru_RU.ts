@@ -66,12 +66,12 @@
         <translation>Адреса получения</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Это ваши Qtum адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
+        <source>These are your BCS addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Это ваши BCS адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Это ваши Qtum адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
+        <source>These are your BCS addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Это ваши BCS адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -122,6 +122,18 @@
     <message>
         <source>Passphrase Dialog</source>
         <translation>Ввод пароля</translation>
+    </message>
+	<message>
+        <source>OK</source>
+        <translation>OK</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
@@ -176,8 +188,8 @@
         <translation>Подтвердите шифрование кошелька</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>Внимание: если вы зашифруете ваш кошелек и потеряете ваш пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ БИТКОЙНЫ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BCSS&lt;/b&gt;!</source>
+        <translation>Внимание: если вы зашифруете ваш кошелек и потеряете ваш пароль, то вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ BCS-КОИНЫ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -188,12 +200,12 @@
         <translation>Кошелек зашифрован</translation>
     </message>
     <message>
-        <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
-        <translation>Ваш кошелек теперь зашифрован. Помните, что шифрование вашего кошелька не может полностью защитить ваши биткойны от кражи вредоносным ПО.</translation>
+        <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your bcss from being stolen by malware infecting your computer.</source>
+        <translation>Ваш кошелек теперь зашифрован. Помните, что шифрование вашего кошелька не может полностью защитить ваши монеты от кражи вредоносным ПО.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>ВАЖНО: любые предыдущие резервные копия вашего кошелька, выполненные вами, необходимо заменить новым сгенерированным, зашифрованным файлом кошелька. В целях безопасности, предыдущие резервные копии незашифрованного файла кошелька утратят пригодность после начала использования нового зашифрованного кошелька.</translation>
+        <translation>ВАЖНО: любые предыдущие резервные копии вашего кошелька, выполненные вами, необходимо заменить новым сгенерированным, зашифрованным файлом кошелька. В целях безопасности, предыдущие резервные копии незашифрованного файла кошелька утратят пригодность после начала использования нового зашифрованного кошелька.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -227,6 +239,10 @@
         <source>Warning: The Caps Lock key is on!</source>
         <translation>Внимание: клавиша CapsLock включена!</translation>
     </message>
+	<message>
+        <source>For staking only.</source>
+        <translation>Открыть только для стейкинга.</translation>
+    </message>
 </context>
 <context>
     <name>BanTableModel</name>
@@ -240,14 +256,94 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>BitcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Подписать &amp;сообщение...</translation>
     </message>
+	<message>
+        <source>&amp;Unlock Wallet...</source>
+        <translation>&amp;Разблокировать кошелек...</translation>
+    </message>
+	<message>
+        <source>&amp;Lock Wallet</source>
+        <translation>&amp;Заблокировать кошелек</translation>
+    </message>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Синхронизация с сетью...</translation>
+    </message>
+<message>
+        <source>&amp;File</source>
+        <translation>&amp;Файл</translation>
+    </message>
+<message>
+        <source>&amp;Restore Wallet...</source>
+        <translation>&amp;Восстановить кошелек</translation>
+    </message>
+<message>
+        <source>Smart &amp;Contracts</source>
+        <translation>&amp;Контракты</translation>
+    </message>
+<message>
+        <source>Smart contracts</source>
+        <translation>Смарт-контракты</translation>
+    </message>
+<message>
+        <source>Create</source>
+        <translation>Создать</translation>
+    </message>
+<message>
+        <source>Send To</source>
+        <translation>Отправить</translation>
+    </message>
+<message>
+        <source>Call</source>
+        <translation>Вызвать</translation>
+    </message>
+<message>
+        <source>&amp;Stake</source>
+        <translation>&amp;Стейкинг</translation>
+    </message>
+<message>
+        <source>Show stake of wallet</source>
+        <translation>Отобразить информацию по стейкингу по кошельку</translation>
+    </message>
+<message>
+        <source>&amp;Tokens</source>
+        <translation>&amp;Токены</translation>
+    </message>
+<message>
+        <source>Tokens (send, receive or add Tokens in list)</source>
+        <translation>Токены (отправить, получить и добавить в список токенов)</translation>
+    </message>
+<message>
+        <source>Not staking</source>
+        <translation>Нет стейкинга</translation>
+    </message>
+<message>
+        <source>Not staking because wallet is offline</source>
+        <translation>Нет стейкинга, потому что отсутсвует подключение к сети</translation>
+    </message>
+<message>
+        <source>Not staking because wallet is syncing</source>
+        <translation>Нет стейкинга, потому что кошелек в процессе синхронизации</translation>
+    </message>
+<message>
+        <source>Not staking because you don't have mature coins</source>
+        <translation>Нет стейкинга, потому что у вас нет зрелых монет</translation>
+    </message>
+<message>
+        <source>Not staking because wallet is locked</source>
+        <translation>Нет стейкинга, потому что кошелек заперт</translation>
+    </message>
+<message>
+        <source>My &amp;wallet</source>
+        <translation>Мой &amp;кошелек</translation>
+    </message>
+	<message>
+        <source>Staking. Your weight is %1 Network weight is %2 Expected time to earn reward is %3</source>
+        <translation>Стейкинг.&lt;br/&gt;Ваш вес в сети %1&lt;br/&gt;Общий вес сети %2&lt;br/&gt;Ожидаемое время получения награды %3</translation>
     </message>
     <message>
         <source>&amp;Overview</source>
@@ -342,8 +438,8 @@
         <translation>Прокси &lt;b&gt;включен&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Послать средства на биткойн адрес</translation>
+        <source>Send coins to a BCS address</source>
+        <translation>Послать средства на BCS адрес</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -366,8 +462,8 @@
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum Core</translation>
+        <source>BCS</source>
+        <translation>BCS Core</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -390,12 +486,12 @@
         <translation>Зашифровать приватные ключи, принадлежащие вашему кошельку</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Подписывайте сообщения Qtum адресами чтобы подтвердить что это написали именно Вы</translation>
+        <source>Sign messages with your BCS addresses to prove you own them</source>
+        <translation>Подписывайте сообщения BCS адресами чтобы подтвердить что это написали именно Вы</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными Qtum адресами</translation>
+        <source>Verify messages to ensure they were signed with specified BCS addresses</source>
+        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными BCS адресами</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -414,7 +510,7 @@
         <translation>Панель вкладок</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
+        <source>Request payments (generates QR codes and bcs: URIs)</source>
         <translation>Запросить платеж</translation>
     </message>
     <message>
@@ -426,16 +522,20 @@
         <translation>Показать список использованных адресов и меток получателей</translation>
     </message>
     <message>
-        <source>Open a qtum: URI or payment request</source>
-        <translation>Открыть биткойн: URI или запрос платежа</translation>
+        <source>Open a bcs: URI or payment request</source>
+        <translation>Открыть BCS: URI или запрос платежа</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>Опции командной строки</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
-        <translation><numerusform>%n активное подключение к сети Qtum</numerusform><numerusform>%n активных подключения к сети Qtum</numerusform><numerusform>%n активных подключений к сети Qtum</numerusform><numerusform>%n активных подключений к сети Qtum</numerusform></translation>
+        <source>%n active connection(s) to BCS network</source>
+        <translation>
+			<numerusform>%n активное подключение к сети BCS</numerusform>
+			<numerusform>%n активных подключения к сети BCS</numerusform>
+			<numerusform>%n активных подключений к сети BCS</numerusform>
+		</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -447,7 +547,11 @@
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
-        <translation><numerusform>Обработан %n блок истории транзакций.</numerusform><numerusform>Обработано %n блока истории транзакций.</numerusform><numerusform>Обработано %n блоков истории транзакций.</numerusform><numerusform>Обработано %n блоков истории транзакций.</numerusform></translation>
+        <translation>
+			<numerusform>Обработан %n блок истории транзакций.</numerusform>
+			<numerusform>Обработано %n блока истории транзакций.</numerusform>
+			<numerusform>Обработано %n блоков истории транзакций.</numerusform>
+		</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -478,11 +582,11 @@
         <translation>Готов</translation>
     </message>
     <message>
-        <source>&amp;Sending addresses</source>
+        <source>&amp;Sending addresses...</source>
         <translation>&amp;Адреса для отправлений</translation>
     </message>
     <message>
-        <source>&amp;Receiving addresses</source>
+        <source>&amp;Receiving addresses...</source>
         <translation>&amp;Адреса для получений</translation>
     </message>
     <message>
@@ -502,7 +606,7 @@
         <translation>Закрыть кошелек</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible BCS command-line options</source>
         <translation>Показать помощь по %1, чтобы получить список доступных параметров командной строки</translation>
     </message>
     <message>
@@ -605,17 +709,61 @@
         <source>Private key &lt;b&gt;disabled&lt;/b&gt;</source>
         <translation>Приватный ключ &lt;b&gt;отключен&lt;/b&gt;</translation>
     </message>
-    <message>
+	<message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и сейчас &lt;b&gt;разблокирован&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked for staking only&lt;/b&gt;</source>
+        <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и сейчас &lt;b&gt;разблокирован только для стейкинга&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и сейчас &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
+	<message>
+        <source>New version of BCS wallet is available on the BCS source code repository: %1. It is recommended to download it and update this application</source>
+        <translation>Новая версия BCS-кошелка доступна по адресу: &lt;br/&gt; %1. &lt;br/&gt;Рекомендуется скачать ее и обновить данное приложение</translation>
+    </message>
+	<message>
+        <source>Check for updates</source>
+        <translation>Проверка обновлений</translation>
+    </message>
+	<message numerus="yes">
+        <source>%n second(s)</source>
+        <translation>
+            <numerusform>%n секунда</numerusform>
+			<numerusform>%n секунды</numerusform>
+            <numerusform>%n секунд</numerusform>
+        </translation>
+    </message>
+	<message numerus="yes">
+        <source>%n minute(s)</source>
+        <translation>
+            <numerusform>%n минута</numerusform>
+			<numerusform>%n минуты</numerusform>
+            <numerusform>%n минут</numerusform>
+        </translation>
+    </message>
+	<message numerus="yes">
+        <source>%n hour(s)</source>
+        <translation>
+            <numerusform>%n час</numerusform>
+			<numerusform>%n часа</numerusform>
+            <numerusform>%n часов</numerusform>
+        </translation>
+    </message>
+	<message numerus="yes">
+        <source>%n day(s)</source>
+        <translation>
+            <numerusform>%n день</numerusform>
+			<numerusform>%n дня</numerusform>
+            <numerusform>%n дней</numerusform>
+        </translation>
+    </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>Произошла критическая ошибка. Qtum больше не может продолжать безопасную работу и будет закрыт.</translation>
+        <source>A fatal error occurred. BCS can no longer continue safely and will quit.</source>
+        <translation>Произошла критическая ошибка. BCS больше не может продолжать безопасную работу и будет закрыт.</translation>
     </message>
 </context>
 <context>
@@ -804,8 +952,8 @@
         <translation>Изменить адрес отправки</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>Введенный адрес "%1" не является действительным адресом Qtum.</translation>
+        <source>The entered address "%1" is not a valid BCS address.</source>
+        <translation>Введенный адрес "%1" не является действительным адресом BCS.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -822,6 +970,10 @@
     <message>
         <source>New key generation failed.</source>
         <translation>Произошла ошибка при генерации нового ключа.</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
     </message>
 </context>
 <context>
@@ -859,7 +1011,7 @@
     </message>
     <message>
         <source>About %1</source>
-        <translation>Около %1</translation>
+        <translation>О %1</translation>
     </message>
     <message>
         <source>Command-line options</source>
@@ -901,8 +1053,8 @@
         <translation>Использовать пользовательскую директорию данных</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum Core</translation>
+        <source>BCS</source>
+        <translation>BCS Core</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -913,7 +1065,7 @@
         <translation>Приблизительно %1 ГБ данных будет сохранено в эту директорию.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
+        <source>%1 will download and store a copy of the BCS block chain.</source>
         <translation>%1 скачает и сохранит копию цепи блоков.</translation>
     </message>
     <message>
@@ -944,11 +1096,11 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the bcs network, as detailed below.</source>
         <translation>Последние транзакции пока могут быть не видны, поэтому вы можете видеть некорректный баланс ваших кошельков. Отображаемая информация будет верна после завершения синхронизации. Прогресс синхронизации вы можете видеть ниже.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend bcss that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Попытка потратить средства, использованные в транзакциях, которые ещё не синхронизированы, будет отклонена сетью.</translation>
     </message>
     <message>
@@ -994,6 +1146,10 @@
         <source>Open URI</source>
         <translation>Открыть URI</translation>
     </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
     <message>
         <source>Open payment request from URI or file</source>
         <translation>Открыть запрос на оплату из URI или файла</translation>
@@ -1027,7 +1183,7 @@
     </message>
     <message>
         <source>&amp;Start %1 on system login</source>
-        <translation>&amp;Запустить %1 при входе в систему</translation>
+        <translation>&amp;Запускать %1 при входе в систему</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1127,11 +1283,11 @@
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
-        <translation>&amp;Тратить неподтвержденную сдачу</translation>
+        <translation>&amp;Тратить неподтвержденное сдачу</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматически открыть порт для Qtum-клиента на маршрутизаторе. Работает только если Ваш маршрутизатор поддерживает UPnP, и данная функция включена.</translation>
+        <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматически открыть порт для BCS-клиента на маршрутизаторе. Работает только если Ваш маршрутизатор поддерживает UPnP, и данная функция включена.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1146,8 +1302,8 @@
         <translation>Разрешить входящие соединения</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation>Подключится к сети Qtum через SOCKS5 прокси.</translation>
+        <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
+        <translation>Подключится к сети BCS через SOCKS5 прокси.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1182,8 +1338,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Соединяться к Qtum-сети через отдельные SOCKS5 прокси через Tor hidden services:</translation>
+        <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Соединяться к BCS-сети через отдельные SOCKS5 прокси через Tor hidden services:</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1195,7 +1351,7 @@
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>&amp;Сворачивать в системный лоток вместо панели задач</translation>
+        <translation>&amp;Сворачивать в трей вместо панели задач</translation>
     </message>
     <message>
         <source>M&amp;inimize on close</source>
@@ -1223,7 +1379,7 @@
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
-        <translation>Показывать ли опцию управления монетами.</translation>
+        <translation>Показывать опцию управления монетами при отправке монет</translation>
     </message>
     <message>
         <source>&amp;Third party transaction URLs</source>
@@ -1237,6 +1393,14 @@
         <source>&amp;OK</source>
         <translation>&amp;ОК</translation>
     </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
     <message>
         <source>&amp;Cancel</source>
         <translation>&amp;Отмена</translation>
@@ -1247,7 +1411,7 @@
     </message>
     <message>
         <source>none</source>
-        <translation>ни один</translation>
+        <translation>не задан</translation>
     </message>
     <message>
         <source>Confirm options reset</source>
@@ -1256,6 +1420,14 @@
     <message>
         <source>Client restart required to activate changes.</source>
         <translation>Для активации изменений необходим перезапуск клиента.</translation>
+    </message>
+	<message>
+        <source>Are you sure you wish to restart your wallet?</source>
+        <translation>Вы уверены, что хотите перезапустить кошелёк?</translation>
+    </message>
+	<message>
+        <source>Confirm wallet restart</source>
+        <translation>Подтвердите перезапуск кошелька</translation>
     </message>
     <message>
         <source>Client will be shut down. Do you want to proceed?</source>
@@ -1285,6 +1457,38 @@
         <source>The supplied proxy address is invalid.</source>
         <translation>Введенный адрес прокси-сервера недействителен.</translation>
     </message>
+	<message>
+        <source>Reserve</source>
+        <translation>Зарезервировано</translation>
+    </message>
+	<message>
+        <source>Reserve amount that will not be used for staking</source>
+        <translation>Зарезервированная сумма не будет участвовать в стейкинге</translation>
+    </message>
+	<message>
+        <source>Enable  log &amp;events</source>
+        <translation>Включить логгирование &amp;событий</translation>
+    </message>
+	<message>
+        <source>Enable &amp;zero balance for receiver token address</source>
+        <translation>Разрешить отправку токенов на адреса с нулевым балансом</translation>
+    </message>
+	<message>
+        <source>Use change &amp;address</source>
+        <translation>Использовать смену &amp;адресов</translation>
+    </message>
+	<message>
+        <source>Check for &amp;updates</source>
+        <translation>Проверять &amp;обновления</translation>
+    </message>
+	<message>
+        <source>User Interface &amp;style:</source>
+        <translation>Стиль пользовательского &amp;интерфейса:</translation>
+    </message>
+	<message>
+        <source>The user interface style can be set here. This setting will take effect after restarting %1.</source>
+        <translation>Стиль пользовательского интерфейса может быть изменён здесь. Изменения вступят в силу после перезагрузки %1.</translation>
+    </message>
 </context>
 <context>
     <name>OverviewPage</name>
@@ -1293,8 +1497,8 @@
         <translation>Форма</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью Qtum после подключения, но этот процесс пока не завершён.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the BCS network after a connection is established, but this process has not completed yet.</source>
+        <translation>Отображаемая информация может быть устаревшей. Ваш бумажник автоматически синхронизируется с сетью BCS после подключения, но этот процесс пока не завершён.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1345,7 +1549,7 @@
         <translation>Доступно:</translation>
     </message>
     <message>
-        <source>Recent transactions</source>
+        <source>Recent Transactions</source>
         <translation>Последние транзакции</translation>
     </message>
     <message>
@@ -1360,6 +1564,38 @@
         <source>Current total balance in watch-only addresses</source>
         <translation>Текущий общий баланс на адресах наблюдения</translation>
     </message>
+	<message>
+        <source>Send</source>
+        <translation>Отправить</translation>
+    </message>
+	<message>
+        <source>Receive</source>
+        <translation>Запросить</translation>
+    </message>
+	<message>
+        <source>More</source>
+        <translation>Все</translation>
+    </message>
+	<message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+	<message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+	<message>
+        <source>Label</source>
+        <translation>Метка</translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation>Сумма</translation>
+    </message>
+	<message>
+        <source>Stake:</source>
+        <translation>На стейкинге:</translation>
+    </message>
 </context>
 <context>
     <name>PaymentServer</name>
@@ -1368,16 +1604,16 @@
         <translation>Ошибка запроса платежа</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>Не удаётся запустить qtum: обработчик click-to-pay</translation>
+        <source>Cannot start bcs: click-to-pay handler</source>
+        <translation>Не удаётся запустить bcs: обработчик click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation>Обработка идентификатора</translation>
     </message>
     <message>
-        <source>'qtum://' is not a valid URI. Use 'qtum:' instead.</source>
-        <translation>'qtum://' не верный URI. Используйте 'qtum:' вместо этого.</translation>
+        <source>'bcs://' is not a valid URI. Use 'bcs:' instead.</source>
+        <translation>'bcs://' не верный URI. Используйте 'bcs:' вместо этого.</translation>
     </message>
     <message>
         <source>You are using a BIP70 URL which will be unsupported in the future.</source>
@@ -1396,8 +1632,8 @@
         <translation>Неверный адрес %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation>Не удалось обработать идентификатор! Это может быть связано с неверным Qtum-адресом или неправильными параметрами идентификатора.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid BCS address or malformed URI parameters.</source>
+        <translation>Не удалось обработать идентификатор! Это может быть связано с неверным BCS-адресом или неправильными параметрами идентификатора.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1498,8 +1734,8 @@
         <translation>Количество</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Введите Qtum адрес (напр. %1)</translation>
+        <source>Enter a BCS address (e.g. %1)</source>
+        <translation>Введите BCS адрес (напр. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1950,8 +2186,8 @@
         <translation>&amp;Сообщение:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть Qtum.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the BCS network.</source>
+        <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть BCS.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2021,6 +2257,14 @@
         <source>Copy amount</source>
         <translation>Копировать сумму</translation>
     </message>
+	<message>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Закрыть</translation>
+    </message>
+	<message>
+        <source>S&amp;ubmit</source>
+        <translation>О&amp;ткрыть</translation>
+    </message>
 </context>
 <context>
     <name>ReceiveRequestDialog</name>
@@ -2080,6 +2324,22 @@
         <source>Error encoding URI into QR Code.</source>
         <translation>Ошибка преобразования URI в QR-код.</translation>
     </message>
+	<message>
+        <source>Address:</source>
+        <translation>Адрес: </translation>
+    </message>
+	<message>
+        <source>Address Re&amp;fresh</source>
+        <translation>Обновить &amp;адрес</translation>
+    </message>
+	<message>
+        <source>&amp;Request Payment</source>
+        <translation>&amp;Запросить платеж</translation>
+    </message>
+	<message>
+        <source>Clear &amp;All</source>
+        <translation>Сбросить &amp;все</translation>
+    </message>
 </context>
 <context>
     <name>RecentRequestsTableModel</name>
@@ -2117,6 +2377,14 @@
     <message>
         <source>Send Coins</source>
         <translation>Отправить монеты</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2203,11 +2471,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Спрятать</translation>
     </message>
     <message>
-        <source>Recommended:</source>
+        <source>Recommended</source>
         <translation>Рекомендованное значение:</translation>
     </message>
     <message>
-        <source>Custom:</source>
+        <source>Custom</source>
         <translation>Пользовательское значение:</translation>
     </message>
     <message>
@@ -2231,8 +2499,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Пыль:</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
-        <translation>Когда объем транзакций меньше, чем пространство в блоках, майнеры, а также ретранслирующие узлы могут устанавливать минимальную плату. Платить только эту минимальную комиссию - это хорошо, но имейте в виду, что это может привести к тому, что транзакция никогда не будет подтверждена, если будет больше биткойн-транзакций, чем может обработать сеть.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for bcs transactions than the network can process.</source>
+        <translation>Когда объем транзакций меньше, чем пространство в блоках, майнеры, а также ретранслирующие узлы могут устанавливать минимальную плату. Платить только эту минимальную комиссию - это хорошо, но имейте в виду, что это может привести к тому, что транзакция никогда не будет подтверждена, если будет больше транзакций, чем может обработать сеть.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2300,7 +2568,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>%1 to %2</source>
-        <translation>С %1 на %2</translation>
+        <translation>%1 на %2</translation>
     </message>
     <message>
         <source>Are you sure you want to send?</source>
@@ -2374,9 +2642,17 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <source>Payment request expired.</source>
         <translation>Истекло время ожидания запроса платежа</translation>
     </message>
+	<message numerus="yes">
+        <source>Estimated to begin confirmation within %n block(s).</source>
+        <translation>
+            <numerusform>Предполагается начать подтверждение через %n блок.</numerusform>
+            <numerusform>Предполагается начать подтверждение через %n блока.</numerusform>
+			<numerusform>Предполагается начать подтверждение через %n блоков.</numerusform>
+        </translation>
+    </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Предупреждение: Неверный Qtum адрес</translation>
+        <source>Warning: Invalid BCS address</source>
+        <translation>Предупреждение: Неверный BCS адрес</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2418,8 +2694,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Это нормальный платёж.</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>Qtum-адрес, на который отправить платёж</translation>
+        <source>The BCS address to send the payment to</source>
+        <translation>BCS-адрес, на который отправить платёж</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2438,8 +2714,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Удалить эту запись</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>С отправляемой суммы будет удержана комиссия. Получателю придёт меньше qtums, чем вы вводите в поле количества. Если выбрано несколько получателей, комиссия распределяется поровну.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less bcs coins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>С отправляемой суммы будет удержана комиссия. Получателю придёт меньше bcs-монет, чем вы вводите в поле количества. Если выбрано несколько получателей, комиссия распределяется поровну.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2466,8 +2742,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Введите метку для этого адреса, чтобы добавить его в список используемых адресов</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>Сообщение прикрепленное к qtum идентификатору будет сохранено вместе с транзакцией для вашего сведения. Заметьте: сообщение не будет отправлено через сеть Qtum.</translation>
+        <source>A message that was attached to the bcs: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the BCS network.</source>
+        <translation>Сообщение прикрепленное к bcs идентификатору будет сохранено вместе с транзакцией для вашего сведения. Заметьте: сообщение не будет отправлено через сеть BCS.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2487,6 +2763,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     <message>
         <source>Yes</source>
         <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
     </message>
 </context>
 <context>
@@ -2511,12 +2791,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>&amp;Подписать Сообщение</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Вы можете подписывать сообщения/соглашения своими адресами, чтобы доказать свою возможность получать qtums на них. Будьте осторожны, не подписывайте что-то неопределённое или случайное, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive bcss sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Вы можете подписывать сообщения/соглашения своими адресами, чтобы доказать свою возможность получать монеты bcs на них. Будьте осторожны, не подписывайте что-то неопределённое или случайное, так как фишинговые атаки могут обманным путём заставить вас подписать нежелательные сообщения. Подписывайте только те сообщения, с которыми вы согласны вплоть до мелочей.</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation>Qtum-адрес, которым подписать сообщение</translation>
+        <source>The BCS address to sign the message with</source>
+        <translation>BCS-адрес, которым подписать сообщение</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2547,8 +2827,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Скопировать текущую подпись в буфер обмена системы</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Подписать сообщение, чтобы доказать владение Qtum-адресом</translation>
+        <source>Sign the message to prove you own this BCS address</source>
+        <translation>Подписать сообщение, чтобы доказать владение BCS-адресом</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2571,12 +2851,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Введите ниже адрес получателя, сообщение (убедитесь, что переводы строк, пробелы, табы и т.п. в точности скопированы) и подпись, чтобы проверить сообщение. Убедитесь, что не скопировали лишнего в подпись, по сравнению с самим подписываемым сообщением, чтобы не стать жертвой атаки "man-in-the-middle". Заметьте, что эта операция удостоверяет лишь авторство подписавшего, но не может удостоверить отправителя транзакции.</translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation>Qtum-адрес, которым было подписано сообщение</translation>
+        <source>The BCS address the message was signed with</source>
+        <translation>BCS-адрес, которым было подписано сообщение</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным Qtum-адресом</translation>
+        <source>Verify the message to ensure it was signed with the specified BCS address</source>
+        <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным BCS-адресом</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2737,7 +3017,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
-        <translation><numerusform>созревает еще в %n блоках</numerusform><numerusform>созревает еще в %n блоках</numerusform><numerusform>созревает еще в %n блоках</numerusform><numerusform>созревает еще в %n блоках</numerusform></translation>
+        <translation>
+			<numerusform>созреет через %n блок</numerusform>
+			<numerusform>созреет через %n блока</numerusform>
+			<numerusform>созреет через %n блоков</numerusform>
+		</translation>
     </message>
     <message>
         <source>not accepted</source>
@@ -2830,6 +3114,10 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <source>Details for %1</source>
         <translation>Детальная информация по %1</translation>
     </message>
+	<message>
+        <source>Transaction details</source>
+        <translation>Детали транзакции</translation>
+    </message>
 </context>
 <context>
     <name>TransactionTableModel</name>
@@ -2900,6 +3188,14 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     <message>
         <source>Mined</source>
         <translation>Добыто</translation>
+    </message>
+	<message>
+        <source>Contract receive</source>
+        <translation>Получено от контракта</translation>
+    </message>
+	<message>
+        <source>Contract send</source>
+        <translation>Отправлено в контракт</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -3096,6 +3392,14 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <source>to</source>
         <translation>для</translation>
     </message>
+	<message>
+        <source>Contract Receive</source>
+        <translation>Получено от контракта</translation>
+    </message>
+	<message>
+        <source>Contract Send</source>
+        <translation>Отправлено в контракт</translation>
+    </message>
 </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
@@ -3114,7 +3418,20 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <source>Are you sure you wish to close wallet &lt;i&gt;%1&lt;/i&gt;?</source>
         <translation>Вы уверены, что хотите закрыть кошелек &lt;i&gt;%1&lt;/i&gt;?</translation>
     </message>
-    </context>
+	<message>
+        <location line="+1"/>
+        <source>Closing the wallet for too long can result in having to resync the entire chain if pruning is enabled.</source>
+        <translation>Закрытие кошелька на длительное время может привести к необходимости повторной синхрнизации, если включено сокращение хранимого блокчейна.</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
+</context>
 <context>
     <name>WalletFrame</name>
     <message>
@@ -3209,7 +3526,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation>Распространяется под лицензией MIT, см. приложенный файл %s или %s</translation>
@@ -3239,8 +3556,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Невозможно запустить HTTP-сервер. Для получения более детальной информации необходимо обратиться к журналу отладки.</translation>
     </message>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>BCS Core</source>
+        <translation>BCS Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
@@ -3264,11 +3581,11 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
-        <translation>Пожалуйста, внесите свой вклад, если вы найдете %s полезными. Посетите %s для получения дополнительной информации о программном обеспечении.</translation>
+        <translation>Пожалуйста, внесите свой вклад, если вы найдете %s полезным. Посетите %s для получения дополнительной информации о программном обеспечении.</translation>
     </message>
     <message>
         <source>The block database contains a block which appears to be from the future. This may be due to your computer's date and time being set incorrectly. Only rebuild the block database if you are sure that your computer's date and time are correct</source>
-        <translation>База данных блоков содержит блок, который появляется из будущего. Это может из-за некорректно установленных даты и времени на вашем компьютере. Остается только перестраивать базу блоков, если вы уверены, что дата и время корректны.</translation>
+        <translation>База данных блоков содержит блок, который появляется из будущего. Это может происходить из-за некорректно установленных даты и времени на вашем компьютере. Остается только перестраивать базу блоков, если вы уверены, что дата и время корректны.</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
@@ -3707,6 +4024,1002 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     <message>
         <source>Error</source>
         <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>&amp;File</source>
+        <translation>&amp;Файл</translation>
+    </message>
+</context>
+<context>
+    <name>QRCToken</name>
+    <message>
+        <source>Copy receive address</source>
+        <translation>Скопировать адрес</translation>
+    </message>
+	<message>
+        <source>Copy token balance</source>
+		<translation>Скопировать баланс</translation>
+    </message>
+	<message>
+        <source>Copy token name</source>
+		<translation>Скопировать имя токена</translation>
+    </message>
+	<message>
+        <source>Copy contract address</source>
+		<translation>Скопировать адрес контракта</translation>
+    </message>
+	<message>
+        <source>Remove token</source>
+		<translation>Удалить токен</translation>
+    </message>
+	<message>
+        <source>Confirm token remove</source>
+		<translation>Подтвердить удаление токена</translation>
+    </message>
+	<message>
+        <source>The selected token will be removed from the list. Are you sure?</source>
+        <translation>Выбранный токен будет удален из списка. Вы уверены?</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отмена</translation>
+    </message>
+</context>
+<context>
+	<name>CreateContract</name>
+	<message>
+        <source>The bytecode of the contract</source>
+        <translation>Байткод контракта</translation>
+    </message>
+	<message>
+        <source>The BCS address that will be used to create the contract.</source>
+        <translation>BCS-адрес, который будет использован для создания контракта.</translation>
+    </message>
+	<message>
+        <source>Create Contract</source>
+        <translation>Создать контракт</translation>
+    </message>
+	<message>
+        <source>Solidity compiler</source>
+        <translation>Компилятор Solidity</translation>
+    </message>
+	<message>
+        <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
+        <translation>Цена газа слишком высока, вы уверены, что хотите использовать максимум %1 для этой транзакции?</translation>
+    </message>
+	<message>
+        <source>High Gas price</source>
+        <translation>Высокая цена газа</translation>
+    </message>
+	<message>
+        <source>Are you sure you want to create contract?</source>
+        <translation>Вы уверены, что хотите создать контракт?</translation>
+    </message>
+	<message>
+        <source>Confirm contract creation.</source>
+        <translation>Подтвердить создание контракта.</translation>
+    </message>
+	<message>
+        <source>Gas limit. Default = %1, Max = %2</source>
+        <translation>Лимит газа. По умолчанию = %1, максимум - %2</translation>
+    </message>
+	<message>
+        <source>Gas price: BCS price per gas unit. Default = %1, Min = %2</source>
+        <translation>Цена газа: цена в BCS за единицу газа: по умолчанию = %1, минимум = %2</translation>
+    </message>
+	<message>
+        <source>Result %1</source>
+        <translation>Результат %1</translation>
+    </message>
+	<message>
+        <source>Create Smart Contract</source>
+        <translation>Создать смарт-контракт</translation>
+    </message>
+	<message>
+        <source>Bytecode</source>
+        <translation>Байткод</translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation>Интерфейс (ABI)</translation>
+    </message>
+	<message>
+        <source>Constructor</source>
+        <translation>Конструктор</translation>
+    </message>
+	<message>
+        <source>Optional</source>
+        <translation>Дополнительно</translation>
+    </message>
+	<message>
+        <source>Gas Limit</source>
+        <translation>Лимит газа</translation>
+    </message>
+	<message>
+        <source>Gas Price</source>
+        <translation>Цена газа</translation>
+    </message>
+	<message>
+        <source>Sender Address</source>
+        <translation>Адрес отправителя</translation>
+    </message>
+	<message>
+        <source>Clear All</source>
+        <translation>Очистить</translation>
+    </message>
+</context>
+<context>
+	<name>SendToContract</name>
+	<message>
+        <source>Send To Contract</source>
+        <translation>Отправить контракту</translation>
+    </message>
+	<message>
+        <source>Result %1</source>
+        <translation>Результат %1</translation>
+    </message>
+	<message>
+        <source>Send to Smart Contract</source>
+        <translation>Отправить транзакцию в смарт-контракт</translation>
+    </message>
+	<message>
+        <source>Choose from contract book page</source>
+        <translation>Выбрать контракт из списка сохраненных</translation>
+    </message>
+	<message>
+        <source>Paste contract address from clipboard</source>
+        <translation>Вставить адрес контракта из буфера обмена</translation>
+    </message>
+	<message>
+        <source>Save contract info</source>
+        <translation>Сохранить данные по контракту</translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation>Интерфейс (ABI)</translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation>Адрес контракта</translation>
+    </message>
+	<message>
+        <source>Function</source>
+        <translation>Функция</translation>
+    </message>
+	<message>
+        <source>Optional</source>
+        <translation>Дополнительно</translation>
+    </message>
+	<message>
+        <source>Gas Limit</source>
+        <translation>Лимит газа</translation>
+    </message>
+	<message>
+        <source>Gas Price</source>
+        <translation>Цена газа</translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation>Сумма</translation>
+    </message>
+	<message>
+        <source>Sender Address</source>
+        <translation>Адрес отправителя</translation>
+    </message>
+	<message>
+        <source>Clear All</source>
+        <translation>Очистить все</translation>
+    </message>
+	<message>
+        <source>Send To Contract</source>
+        <translation>Отправить</translation>
+    </message>
+	<message>
+        <source>The contract address that will receive the funds and data.</source>
+        <translation>Адрес контракта, которому будут отправлены средства и данные.</translation>
+    </message>
+	<message>
+        <source>The amount in BCS to send. Default = 0.</source>
+        <translation>Сумма в BCS для отправки. По умолчанию = 0.</translation>
+    </message>
+	<message>
+        <source>The BCS address that will be used as sender.</source>
+        <translation>BCS-адрес, который будет использован для отправки.</translation>
+    </message>
+	<message>
+        <source>The Gas Price is too high, are you sure you want to possibly spend a max of %1 for this transaction?</source>
+        <translation>Цена газа слишком высокая. Вы уверены, что позволяете потратить не более %1 для этой транзакции?</translation>
+    </message>
+	<message>
+        <source>High Gas price</source>
+        <translation>Высокая цена газа</translation>
+    </message>
+	<message>
+        <source>Are you sure you want to send to the contract:</source>
+        <translation>Вы уверены, что хотите отправить транзакцию в контракт: &lt;br/&gt;&lt;br/&gt;</translation>
+    </message>
+	<message>
+        <source>Confirm sending to contract.</source>
+        <translation>Подтвердить отправку в контракт.</translation>
+    </message>
+	<message>
+        <source>Gas limit. Default = %1, Max = %2</source>
+        <translation>Лимит газа. По умолчанию = %1, макс = %2</translation>
+    </message>
+	<message>
+        <source>Gas price: BCS price per gas unit. Default = %1, Min = %2</source>
+        <translation>Цена газа: цена в BCS за единицу газа. По умолчанию = %1, мин = %2</translation>
+    </message>
+</context>
+<context>
+	<name>SendTokenPage</name>
+	<message>
+        <source>The address that will receive the tokens.</source>
+        <translation>Адрес, на который будут отправлены токены</translation>
+    </message>
+	<message>
+        <source>The amount in Token to send.</source>
+        <translation>Сумма отправления в токенах</translation>
+    </message>
+	<message>
+        <source>Optional description for transaction.</source>
+        <translation>Дополнительное описание транзакции</translation>
+    </message>
+	<message>
+        <source>Gas limit. Default = %1, Max = %2</source>
+        <translation>Лимит газа. По умолчанию = %1, максимум - %2</translation>
+    </message>
+	<message>
+        <source>Gas price: BCS price per gas unit. Default = %1, Min = %2</source>
+        <translation>Цена газа: цена в BCS за единицу газа: по умолчанию = %1, минимум = %2</translation>
+    </message>
+	<message>
+        <source>Are you sure you want to send?&lt;br&gt;&lt;br/&gt;</source>
+        <translation>Вы уверены, что хотите отправить транзакцию?&lt;br&gt;&lt;br/&gt;</translation>
+    </message>
+	<message>
+        <source>&lt;b&gt;%1 %2 &lt;/b&gt; to </source>
+        <translation>&lt;b&gt;%1 %2 &lt;/b&gt; на адрес </translation>
+    </message>
+	<message>
+        <source>Confirm send token.</source>
+        <translation>Подтвердить отправку токена.</translation>
+    </message>
+	<message>
+        <source>Send token</source>
+        <translation>Отправить токен</translation>
+    </message>
+	<message>
+        <source>Send</source>
+        <translation>Отправить</translation>
+    </message>
+	<message>
+        <source>Send</source>
+        <translation>Отправить</translation>
+    </message>
+	<message>
+        <source>GasPrice</source>
+        <translation>Цена газа</translation>
+    </message>
+	<message>
+        <source>GasLimit</source>
+        <translation>Лимит газа</translation>
+    </message>
+	<message>
+        <source>PayTo</source>
+        <translation>Заплатить</translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation>Сумма</translation>
+    </message>
+	<message>
+        <source>Description</source>
+        <translation>Описание</translation>
+    </message>
+	<message>
+        <source>Balance:</source>
+        <translation>Баланс:</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
+</context>
+<context>
+	<name>CallContract</name>
+	<message>
+        <source>Call Contract</source>
+        <translation>Вызвать контракт</translation>
+    </message>
+	<message>
+        <source>Result %1</source>
+        <translation>Результат %1</translation>
+    </message>
+	<message>
+        <source>Call Smart Contract</source>
+        <translation>Вызвать смарт-контракт</translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation>Адрес контракта</translation>
+    </message>
+	<message>
+        <source>Choose from contract book page</source>
+        <translation>Выбрать контракт из списка сохраненных</translation>
+    </message>
+	<message>
+        <source>Paste contract address from clipboard</source>
+        <translation>Вставить адрес контракта из буфера обмена</translation>
+    </message>
+	<message>
+        <source>Save contract info</source>
+        <translation>Сохранить контракт</translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation>Интерфейс (ABI)</translation>
+    </message>
+	<message>
+        <source>Function</source>
+        <translation>Функция</translation>
+    </message>
+	<message>
+        <source>Optional</source>
+        <translation>Дополнительно</translation>
+    </message>
+	<message>
+        <source>Sender Address</source>
+        <translation>Адрес отправителя</translation>
+    </message>
+	<message>
+        <source>The sender address hex string.</source>
+        <translation>Адрес отправителя В hex-формате.</translation>
+    </message>
+	<message>
+        <source>Call Contract</source>
+        <translation>Вызвать</translation>
+    </message>
+	<message>
+        <source>Clear All</source>
+        <translation>Очистить</translation>
+    </message>
+</context>
+<context>
+	<name>TokenItemWidget</name>
+	<message>
+        <source>Send</source>
+        <translation>Отправить</translation>
+    </message>
+	<message>
+        <source>Receive</source>
+        <translation>Запросить</translation>
+    </message>
+	<message>
+        <source>Add new tokens</source>
+        <translation>Добавить новый токен</translation>
+    </message>
+</context>
+<context>
+	<name>AddTokenPage</name>
+	<message>
+        <source>ADD Token</source>
+        <translation>Добавить токен</translation>
+    </message>
+	<message>
+        <source>Token Symbol</source>
+        <translation>Символ токена</translation>
+    </message>
+	<message>
+        <source>Decimals</source>
+        <translation>Знаков после запятой</translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation>Адрес контракта</translation>
+    </message>
+	<message>
+        <source>Token Name</source>
+        <translation>Название токена</translation>
+    </message>
+	<message>
+        <source>Token Address</source>
+        <translation>Адрес кошелька</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
+	<message>
+        <source>Confirm</source>
+        <translation>Подтвердить</translation>
+    </message>
+	<message>
+        <source>(This is your wallet address which will be tied to the token for send/receive operations)</source>
+        <translation>(Адрес вашего кошелька, который будет привязан к токену для получения информации по отправке/получению)</translation>
+    </message>
+	<message>
+        <source>The %1 address \"%2\" is not yours, please change it to new one.\n</source>
+        <translation>%1 адрес \"%2\" не ваш, пожалуйста, измените его на новый.</translation>
+    </message>
+	<message>
+        <source>Invalid token address</source>
+        <translation>Неверный адрес токена</translation>
+    </message>
+	<message>
+        <source>Token exist</source>
+        <translation>Токен добавлен</translation>
+    </message>
+	<message>
+        <source>The token already exist with the specified contract and sender addresses.</source>
+        <translation>Токен с указанным контрактом и адресом уже добавлен.</translation>
+    </message>
+	<message>
+        <source>Log events</source>
+        <translation>Журнал событий</translation>
+    </message>
+	<message>
+        <source>Enable log events from the option menu in order to receive token transactions.</source>
+        <translation>Включить журнал событий для отслеживания получения токенов.</translation>
+    </message>
+</context>
+<context>
+	<name>ReceiveTokenPage</name>
+	<message>
+        <source>Receive</source>
+        <translation>Запрос</translation>
+    </message>
+	<message>
+        <source>Address</source>
+        <translation>Адрес</translation>
+    </message>
+	<message>
+        <source>Copy Address</source>
+        <translation>Скопировать адрес</translation>
+    </message>
+</context>
+<context>
+	<name>StakePage</name>
+	<message>
+        <source>Your current spendable balance</source>
+        <translation>Ваш текущий доступный баланс</translation>
+    </message>
+	<message>
+        <source>Staking assets</source>
+        <translation>Активы</translation>
+    </message>
+	<message>
+        <source>Stake:</source>
+        <translation>На стейкинге:</translation>
+    </message>
+	<message>
+        <source>Staking</source>
+        <translation>Стейкинг</translation>
+    </message>
+	<message>
+        <source>Block height:</source>
+        <translation>Всего блоков:</translation>
+    </message>
+	<message>
+        <source>Block reward:</source>
+        <translation>Награда за блок</translation>
+    </message>
+	<message>
+        <source>4 BCS/Block</source>
+        <translation>4 BCS/Блок</translation>
+    </message>
+	<message>
+        <source>/Block</source>
+        <translation>/Блок</translation>
+    </message>
+	<message>
+        <source>Network weight:</source>
+        <translation>Вес сети:</translation>
+    </message>
+	<message>
+        <source>Expected annualized ROI:</source>
+        <translation>Ожидаемый годовой ROI:</translation>
+    </message>
+	<message>
+        <source>Stake records</source>
+        <translation>Данные по полученным наградам</translation>
+    </message>
+</context>
+<context>
+	<name>TokenTransactionTableModel</name>
+	<message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+	<message>
+        <source>Type</source>
+        <translation>Тип</translation>
+    </message>
+	<message>
+        <source>Label</source>
+        <translation>Метка</translation>
+    </message>
+	<message>
+        <source>Name</source>
+        <translation>Символ</translation>
+    </message>
+	<message>
+        <source>Amount</source>
+        <translation>Сумма</translation>
+    </message>
+	<message>
+        <source>Unconfirmed</source>
+        <translation>Неподтверждено</translation>
+    </message>
+	<message>
+        <source>Confirming (%1 of %2 recommended confirmations)</source>
+        <translation>Подтверждается (%1 из %2 подтверждений)</translation>
+    </message>
+	<message>
+        <source>Confirmed (%1 confirmations)</source>
+        <translation>Подтверждено (%1 подтверждений)</translation>
+    </message>
+	<message>
+        <source>Received with</source>
+        <translation>Получено на</translation>
+    </message>
+	<message>
+        <source>Received from</source>
+        <translation>Получено от</translation>
+    </message>
+	<message>
+        <source>Sent to</source>
+        <translation>Отправлено</translation>
+    </message>
+	<message>
+        <source>Payment to yourself</source>
+        <translation>Платеж себе</translation>
+    </message>
+	<message>
+        <source>(n/a)</source>
+        <translation>(не определено)</translation>
+    </message>
+	<message>
+        <source>Transaction status. Hover over this field to show number of confirmations.</source>
+        <translation>Статус транзакции. Для отображения количества подтверждений необходимо навести курсор на это поле.</translation>
+    </message>
+	<message>
+        <source>Date and time that the transaction was received.</source>
+        <translation>Дата и время получения транзакции.</translation>
+    </message>
+	<message>
+        <source>Type of transaction.</source>
+        <translation>Тип транзакции.</translation>
+    </message>
+	<message>
+        <source>User-defined intent/purpose of the transaction.</source>
+        <translation>Определяемое пользователем намерение/цель транзакции.</translation>
+    </message>
+	<message>
+        <source>Token Name</source>
+        <translation>Символ токена</translation>
+    </message>
+	<message>
+        <source>Amount removed from or added to balance.</source>
+        <translation>Снятая или добавленная к балансу сумма.</translation>
+    </message>
+</context>
+<context>
+	<name>TokenTransactionView</name>
+	<message>
+        <source>All</source>
+        <translation>Все</translation>
+    </message>
+	<message>
+        <source>Today</source>
+        <translation>Сегодня</translation>
+    </message>
+	<message>
+        <source>This week</source>
+        <translation>На этой неделе</translation>
+    </message>
+	<message>
+        <source>This month</source>
+        <translation>В этом месяце</translation>
+    </message>
+	<message>
+        <source>Last month</source>
+        <translation>За последний месяц</translation>
+    </message>
+	<message>
+        <source>This year</source>
+        <translation>В этом году</translation>
+    </message>
+	<message>
+        <source>Range...</source>
+        <translation>В диапазоне</translation>
+    </message>
+	<message>
+        <source>Received with</source>
+        <translation>Получено на</translation>
+    </message>
+	<message>
+        <source>Sent to</source>
+        <translation>Отправлено</translation>
+    </message>
+	<message>
+        <source>To yourself</source>
+        <translation>Самому себе</translation>
+    </message>
+	<message>
+        <source>Enter address to search</source>
+        <translation>Введите адрес для поиска</translation>
+    </message>
+	<message>
+        <source>Min amount</source>
+        <translation>Мин сумма</translation>
+    </message>
+	<message>
+        <source>Copy address</source>
+        <translation>Скопировать адрес</translation>
+    </message>
+	<message>
+        <source>Copy amount</source>
+        <translation>Скопировать сумму</translation>
+    </message>
+	<message>
+        <source>Copy transaction ID</source>
+        <translation>Скопировать ID транзакции</translation>
+    </message>
+	<message>
+        <source>Copy full transaction details</source>
+        <translation>Скопировать детали транзакции</translation>
+    </message>
+	<message>
+        <source>Show transaction details</source>
+        <translation>Показать детали транзакции</translation>
+    </message>
+	<message>
+        <source>Range:</source>
+        <translation>Диапазон:</translation>
+    </message>
+	<message>
+        <source>to</source>
+        <translation>на</translation>
+    </message>
+</context>
+<context>
+    <name>TokenTransactionDesc</name>
+    <message>
+        <source>conflicted with a transaction with %1 confirmations</source>
+        <translation>конфликт с транзакцией с %1 подтверждений</translation>
+    </message>
+    <message>
+        <source>0/unconfirmed, in memory pool</source>
+        <translation>0/неподтверждено, в мемпуле</translation>
+    </message>
+    <message>
+        <source>0/unconfirmed, not in memory pool</source>
+        <translation>0/неподтверждено, не в мемпуле</translation>
+    </message>
+    <message>
+        <source>%1/unconfirmed</source>
+        <translation>%1/неподтверждено</translation>
+    </message>
+    <message>
+        <source>%1 confirmations</source>
+        <translation>%1 подтверждений</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>Token Address</source>
+        <translation>Адрес токена</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>С адреса</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>На адрес</translation>
+    </message>
+	<message>
+        <source>Credit</source>
+        <translation>Кредит</translation>
+    </message> 
+	<message>
+        <source>Debit</source>
+        <translation>Дебет</translation>
+    </message> 
+    <message>
+        <source>Net Amount</source>
+        <translation>Итого</translation>
+    </message>   
+</context>
+<context>
+    <name>TokenDescDialog</name>
+	<message>
+        <source>Token transaction details</source>
+        <translation>Детали транзакции</translation>
+    </message>
+	<message>
+        <source>Details for %1</source>
+        <translation>Детальная информация по %1</translation>
+    </message>
+</context>
+<context>
+    <name>ContractResult</name>
+	<message>
+        <source>Contract Summary</source>
+        <translation>Сводка по контракту</translation>
+    </message>
+	<message>
+        <source>ContractAddress</source>
+        <translation>Адрес контракта</translation>
+    </message>
+	<message>
+        <source>Hash160</source>
+        <translation type="unfinished"></translation>
+    </message>
+	<message>
+        <source>SenderAddress</source>
+        <translation>Адрес отправителя</translation>
+    </message>
+	<message>
+        <source>Transaction ID</source>
+        <translation>ID транзакции</translation>
+    </message>
+	<message>
+        <source>Function</source>
+        <translation>Функция</translation>
+    </message>
+	<message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+</context>
+<context>
+    <name>ContractBookPage</name>
+	<message>
+        <source>Choose the contract for send/call</source>
+        <translation>Выберите контракт</translation>
+    </message>
+	<message>
+        <source>These are your saved contracts. Always check the contract address and the ABI before sending/calling.</source>
+        <translation>Здесь ваши сохранённые контракты. Всегда проверяйте адрес контракта и его интерфейс (ABI) перед тем, как вызвать или отправить транзакцию.</translation>
+    </message>
+	<message>
+        <source>Copy &amp;Address</source>
+        <translation>Скопировать &amp;адрес</translation>
+    </message>
+	<message>
+        <source>Copy &amp;Name</source>
+        <translation>Скопировать &amp;имя</translation>
+    </message>
+	<message>
+        <source>Copy &amp;Interface</source>
+        <translation>Скопировать &amp;интерфейс</translation>
+    </message>
+	<message>
+        <source>&amp;Edit</source>
+        <translation>&amp;Редактировать</translation>
+    </message>
+	<message>
+        <source>&amp;Delete</source>
+        <translation>&amp;Удалить</translation>
+    </message>
+	<message>
+        <source>Delete contact address</source>
+        <translation>Удалить адрес контракта</translation>
+    </message>
+	<message>
+        <source>Exporting Failed</source>
+        <translation>Ошибка экспорта</translation>
+    </message>
+	<message>
+        <source>There was an error trying to save the address list to %1. Please try again.</source>
+        <translation>Произошла ошибка при сохранения списка в %1. Пожалуйста, попробуйте еще раз.</translation>
+    </message>
+	<message>
+        <source>Create a new contract info</source>
+        <translation>Добавить новый контракт</translation>
+    </message>
+	<message>
+        <source>New</source>
+        <translation>Добавить</translation>
+    </message>
+	<message>
+        <source>Copy the currently selected contract address to the system clipboard</source>
+        <translation>Скопировать адрес выбранного контракта в буфер обмена</translation>
+    </message>
+	<message>
+        <source>Copy</source>
+        <translation>Скопировать</translation>
+    </message>
+	<message>
+        <source>Delete the currently selected contract info from the list</source>
+        <translation>Удалить выбранный контракт из списка</translation>
+    </message>
+	<message>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+	<message>
+        <source>Export the data to a file</source>
+        <translation>Экспортировать данные в файл</translation>
+    </message>
+	<message>
+        <source>Export</source>
+        <translation>Экспорт</translation>
+    </message>
+	<message>
+        <source>Choose</source>
+        <translation>Выбрать</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
+	<message>
+        <source>Are you sure you want to delete the address &quot;%1&quot; from your contract address list?</source>
+        <translation>Вы уверены, что хотите удалить адрес &quot;%1&quot; из своего списка контрактов?</translation>
+    </message>
+</context>
+<context>
+    <name>ContractTableModel</name>
+	<message>
+        <source>Label</source>
+        <translation>Метка</translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation>Адрес контракта</translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation>Интерфейс (ABI)</translation>
+    </message>
+	<message>
+        <source>(no label)</source>
+        <translation>(нет метки)</translation>
+    </message>
+</context>
+<context>
+    <name>EditContractInfoDialog</name>
+	<message>
+        <source>New contract info</source>
+        <translation>Сохранить новый контракт</translation>
+    </message>
+	<message>
+        <source>Edit contract info</source>
+        <translation>Редактировать сохранённый контракт</translation>
+    </message>
+	<message>
+        <source>The entered address \"%1\" is already in the contract book.</source>
+        <translation>Введенный адрес \"%1\" уже существует в списке сохранённых контрактов.</translation>
+    </message>
+	<message>
+        <source>Label</source>
+        <translation>Метка</translation>
+    </message>
+	<message>
+        <source>Contract Address</source>
+        <translation>Адрес контракта</translation>
+    </message>
+	<message>
+        <source>Interface (ABI)</source>
+        <translation>Интерфейс (ABI)</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
+</context>
+<context>
+    <name>ABIFunctionField</name>
+	<message>
+        <source>Function</source>
+        <translation>Функция</translation>
+    </message>
+</context>
+<context>
+    <name>RestoreDialog</name>
+	<message>
+        <source>File not selected</source>
+        <translation>Файл не выбран</translation>
+    </message>
+	<message>
+        <source>Please select a file to restore your wallet.</source>
+        <translation>Пожалуйста, выберите файл для восстановления кошелька.</translation>
+    </message>
+	<message>
+        <source>Confirm wallet restoration</source>
+        <translation>Подтвердите восстановление кошелька</translation>
+    </message>
+	<message>
+        <source>Warning: The wallet will be restored from location &lt;b&gt;%1&lt;/b&gt; and restarted with parameter &lt;b&gt;%2&lt;/b&gt;.</source>
+        <translation>Предупреждение: кошелек будет восстановлен из файла &lt;b&gt;%1&lt;/b&gt; и перезапущен с параметром &lt;b&gt;%2&lt;/b&gt;.</translation>
+    </message>
+	<message>
+        <source>&lt;br&gt;&lt;br&gt;Are you sure you wish to restore your wallet?</source>
+        <translation>&lt;br&gt;&lt;br&gt;Вы уверены, что хотите восстановить кошелек?</translation>
+    </message>
+    <message>
+        <source>Rebuild blockchain index</source>
+        <translation>rescan – сканировать блокчейн на предмет потерянных транзакций.
+          Исправление потерянных транзакций, низкого баланса.</translation>
+    </message>
+    <message>
+        <source>Recover transactions without metadata</source>
+        <translation>zapwallettxes=2 - восстановить транзакции без метаданных.
+          Исправление проблем с потерянными транзакциями, низким балансом, сиротскими блоками и разделением цепочки.
+          Сделайте новый бэкап кошелька после выполнения данной операции.</translation>
+    </message>
+    <message>
+        <source>Delete the local copy of the block chain</source>
+        <translation>delete blockchain data - удалить локальную копию блокчейна, повторно синхронизировать весь блокчейн.
+          Исправление проблем с синхронизацией блокчейна, повреждением блокчейна и разделением цепочки.</translation>
+    </message>
+    <message>
+        <source>The wallet.dat will be restored from the selected location and the Qt Wallet will be restarted with the -reindex, -zapwallettxes=2 or -deleteblockchaindata option.</source>
+        <translation>Сначала сделайте бэкап кошелька, операция требует перезапуска кошелька. Файл wallet.dat будет восстановлен и кошелек будет перезапущен с командами -reindex, -zapwallettxes=2 или -deleteblockchaindata</translation>
+    </message>
+	<message>
+        <source>&amp;Reset</source>
+        <translation>&amp;Сбросить</translation>
+    </message>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
+    </message>
+	<message>
+        <source>&amp;Cancel</source>
+        <translation>&amp;Отменить</translation>
+    </message>
+	<message>
+        <source>Restore Wallet</source>
+        <translation>Восстановить кошелек</translation>
+    </message>
+	<message>
+        <source>Select wallet file to restore from</source>
+        <translation>Выберите файл восстановления</translation>
+    </message>
+	<message>
+        <source>Choose wallet restore option</source>
+        <translation>Выберите вариант восстановления кошелька</translation>
+    </message>
+	<message>
+        <source>Restore file</source>
+        <translation>Восстановить файл</translation>
+    </message>
+</context>
+<context>
+    <name>QDialogButtonBox</name>
+	<message>
+        <source>Yes</source>
+        <translation>Да</translation>
+    </message>
+	<message>
+        <source>OK</source>
+        <translation>ОК</translation>
+    </message>
+	<message>
+        <source>Cancel</source>
+        <translation>Отменить</translation>
     </message>
 </context>
 </TS>

@@ -159,7 +159,7 @@ void ContractResult::updateCallResult(QVariant result, FunctionABI function, QLi
 
     setParamsData(function, paramValues);
 
-    ui->lineEditCallSenderAddress->setText(variantMap.value("sender").toString());
+    ui->lineEditSenderAddress->setText(variantMap.value("sender").toString());
     std::string rawData = executionResultMap.value("output").toString().toStdString();
     std::vector<std::vector<std::string>> values;
     std::vector<ParameterABI::ErrorType> errors;

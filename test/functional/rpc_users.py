@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2015-2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test multiple RPC users."""
@@ -42,11 +44,11 @@ class HTTPBasicsTest(BitcoinTestFramework):
         rpcauth3 = lines[1]
         self.password = lines[3]
 
-        with open(os.path.join(get_datadir_path(self.options.tmpdir, 0), "qtum.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(get_datadir_path(self.options.tmpdir, 0), "bcs.conf"), 'a', encoding='utf8') as f:
             f.write(rpcauth+"\n")
             f.write(rpcauth2+"\n")
             f.write(rpcauth3+"\n")
-        with open(os.path.join(get_datadir_path(self.options.tmpdir, 1), "qtum.conf"), 'a', encoding='utf8') as f:
+        with open(os.path.join(get_datadir_path(self.options.tmpdir, 1), "bcs.conf"), 'a', encoding='utf8') as f:
             f.write(rpcuser+"\n")
             f.write(rpcpassword+"\n")
 

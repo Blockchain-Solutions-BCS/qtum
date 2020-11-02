@@ -24,6 +24,8 @@ EditContractInfoDialog::EditContractInfoDialog(Mode _mode, QWidget *parent) :
 
     SetObjectStyleSheet(ui->buttonBox->button(QDialogButtonBox::Cancel), StyleSheetNames::ButtonLight);
     SetObjectStyleSheet(ui->buttonBox->button(QDialogButtonBox::Ok), StyleSheetNames::ButtonGray);
+	
+	ui->buttonBox->button(QDialogButtonBox::Cancel)->setText(tr("Cancel"));
 
     switch(mode)
     {

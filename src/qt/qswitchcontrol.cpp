@@ -9,8 +9,8 @@ static const QSize FrameSize = QSize(68, 30);
 static const QSize SwitchSize = QSize (26, 26);
 static const int SwitchOffset = (FrameSize.height() - SwitchSize.height()) / 2;
 
-static const QString CustomFrameOnStlye = QString("QAbstractButton { border: none; border-radius: %1; background-color: #4697D9;}").arg(FrameSize.height() / 2);
-static const QString CustomFrameOffStlye = QString("QAbstractButton { border: none; border-radius: %1; background-color: #6f80ab;}").arg(FrameSize.height() / 2);
+static const QString CustomFrameOnStlye = QString("QAbstractButton { border: none; border-radius: %1; background-color: #bb9f89;}").arg(FrameSize.height() / 2);
+static const QString CustomFrameOffStlye = QString("QAbstractButton { border: none; border-radius: %1; background-color: #faede3;}").arg(FrameSize.height() / 2);
 static const QString CustomButtonStlye = QString("QPushButton { min-width: 0em; border-radius: %1; background-color: white;}").arg(SwitchSize.height() / 2);
 
 QSwitchControl::QSwitchControl(QWidget *parent):

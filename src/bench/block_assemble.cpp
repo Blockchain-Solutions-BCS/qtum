@@ -1,4 +1,6 @@
 // Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -84,16 +86,16 @@ static void AssembleBlock(benchmark::State& state)
         ::globalSealEngine.reset();
 
         ::fRequireStandard=false;
-        fs::path qtumStateDir = GetDataDir() / "stateQtum";
-        bool fStatus = fs::exists(qtumStateDir);
-        const std::string dirQtum(qtumStateDir.string());
+        fs::path bcsStateDir = GetDataDir() / "stateBCS";
+        bool fStatus = fs::exists(bcsStateDir);
+        const std::string dirBCS(bcsStateDir.string());
         const dev::h256 hashDB(dev::sha3(dev::rlp("")));
-        dev::eth::BaseState existsQtumstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
-        ::globalState = std::unique_ptr<QtumState>(new QtumState(dev::u256(0), QtumState::openDB(dirQtum, hashDB, dev::WithExisting::Trust), dirQtum, existsQtumstate));
-        dev::eth::ChainParams cp((chainparams.EVMGenesisInfo(dev::eth::Network::qtumMainNetwork)));
+        dev::eth::BaseState existsBCSstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
+        ::globalState = std::unique_ptr<BCSState>(new BCSState(dev::u256(0), BCSState::openDB(dirBCS, hashDB, dev::WithExisting::Trust), dirBCS, existsBCSstate));
+        dev::eth::ChainParams cp((chainparams.EVMGenesisInfo(dev::eth::Network::bcsMainNetwork)));
         ::globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
-        ::pstorageresult.reset(new StorageResults(qtumStateDir.string()));
+        ::pstorageresult.reset(new StorageResults(bcsStateDir.string()));
 
         if(chainActive.Tip() != nullptr){
             ::globalState->setRoot(uintToh256(chainActive.Tip()->hashStateRoot));

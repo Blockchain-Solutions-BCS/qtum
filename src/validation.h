@@ -34,20 +34,20 @@
 
 #include <consensus/consensus.h>
 
-/////////////////////////////////////////// qtum
+/////////////////////////////////////////// bcs
 class CWalletTx;
 
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
+#include <bcs/bcsstate.h>
+#include <bcs/bcsDGP.h>
 #include <libethereum/ChainParams.h>
 #include <libethereum/LastBlockHashesFace.h>
 #include <libethashseal/Ethash.h>
 #include <libethashseal/GenesisInfo.h>
 #include <script/standard.h>
-#include <qtum/storageresults.h>
+#include <bcs/storageresults.h>
 
 
-extern std::unique_ptr<QtumState> globalState;
+extern std::unique_ptr<BCSState> globalState;
 extern std::shared_ptr<dev::eth::SealEngineFace> globalSealEngine;
 extern bool fRecordLogOpcodes;
 extern bool fIsVMlogFile;
@@ -55,7 +55,7 @@ extern bool fGettingValuesDGP;
 
 struct EthTransactionParams;
 using valtype = std::vector<unsigned char>;
-using ExtractQtumTX = std::pair<std::vector<QtumTransaction>, std::vector<EthTransactionParams>>;
+using ExtractBCSTX = std::pair<std::vector<BCSTransaction>, std::vector<EthTransactionParams>>;
 ///////////////////////////////////////////
 
 class CBlockIndex;
@@ -179,7 +179,7 @@ static const uint64_t DEFAULT_GAS_LIMIT_OP_SEND=250000;
 static const CAmount DEFAULT_GAS_PRICE=0.00000040*COIN;
 static const CAmount MAX_RPC_GAS_PRICE=0.00000100*COIN;
 
-static const size_t MAX_CONTRACT_VOUTS = 1000; // qtum
+static const size_t MAX_CONTRACT_VOUTS = 1000; // bcs
 
 struct BlockHasher
 {
@@ -366,7 +366,7 @@ std::string FormatStateMessage(const CValidationState &state);
 /** Get the BIP9 state for a given deployment at the current tip. */
 ThresholdState VersionBitsTipState(const Consensus::Params& params, Consensus::DeploymentPos pos);
 
-//////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////// // bcs
 struct CHeightTxIndexIteratorKey {
     unsigned int height;
 
@@ -853,7 +853,7 @@ public:
 void InitScriptExecutionCache();
 
 #ifdef ENABLE_BITCORE_RPC
-///////////////////////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////////////////////// // bcs
 bool GetAddressIndex(uint256 addressHash, int type,
                      std::vector<std::pair<CAddressIndexKey, CAmount> > &addressIndex,
                      int start = 0, int end = 0);
@@ -990,7 +990,7 @@ bool CheckReward(const CBlock& block, CValidationState& state, int nHeight, cons
 
 bool RemoveStateBlockIndex(CBlockIndex *pindex);
 
-//////////////////////////////////////////////////////// qtum
+//////////////////////////////////////////////////////// bcs
 bool GetSpentCoinFromBlock(const CBlockIndex* pindex, COutPoint prevout, Coin* coin);
 
 bool GetSpentCoinFromMainChain(const CBlockIndex* pforkPrev, COutPoint prevoutStake, Coin* coin);
@@ -1007,8 +1007,8 @@ bool CheckMinGasPrice(std::vector<EthTransactionParams>& etps, const uint64_t& m
 
 struct ByteCodeExecResult;
 
-void EnforceContractVoutLimit(ByteCodeExecResult& bcer, ByteCodeExecResult& bcerOut, const dev::h256& oldHashQtumRoot,
-    const dev::h256& oldHashStateRoot, const std::vector<QtumTransaction>& transactions);
+void EnforceContractVoutLimit(ByteCodeExecResult& bcer, ByteCodeExecResult& bcerOut, const dev::h256& oldHashBCSRoot,
+    const dev::h256& oldHashStateRoot, const std::vector<BCSTransaction>& transactions);
 
 void writeVMlog(const std::vector<ResultExecute>& res, const CTransaction& tx = CTransaction(), const CBlock& block = CBlock());
 
@@ -1037,13 +1037,13 @@ struct ByteCodeExecResult{
     std::vector<CTransaction> valueTransfers;
 };
 
-class QtumTxConverter{
+class BCSTxConverter{
 
 public:
 
-    QtumTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL, unsigned int flags = SCRIPT_EXEC_BYTE_CODE) : txBit(tx), view(v), blockTransactions(blockTxs), sender(false), nFlags(flags){}
+    BCSTxConverter(CTransaction tx, CCoinsViewCache* v = NULL, const std::vector<CTransactionRef>* blockTxs = NULL, unsigned int flags = SCRIPT_EXEC_BYTE_CODE) : txBit(tx), view(v), blockTransactions(blockTxs), sender(false), nFlags(flags){}
 
-    bool extractionQtumTransactions(ExtractQtumTX& qtumTx);
+    bool extractionBCSTransactions(ExtractBCSTX& bcsTx);
 
 private:
 
@@ -1051,7 +1051,7 @@ private:
 
     bool parseEthTXParams(EthTransactionParams& params);
 
-    QtumTransaction createEthTX(const EthTransactionParams& etp, const uint32_t nOut);
+    BCSTransaction createEthTX(const EthTransactionParams& etp, const uint32_t nOut);
 
     size_t correctedStackSize(size_t size);
 
@@ -1084,7 +1084,7 @@ class ByteCodeExec {
 
 public:
 
-    ByteCodeExec(const CBlock& _block, std::vector<QtumTransaction> _txs, const uint64_t _blockGasLimit, CBlockIndex* _pindex) : txs(_txs), block(_block), blockGasLimit(_blockGasLimit), pindex(_pindex) {}
+    ByteCodeExec(const CBlock& _block, std::vector<BCSTransaction> _txs, const uint64_t _blockGasLimit, CBlockIndex* _pindex) : txs(_txs), block(_block), blockGasLimit(_blockGasLimit), pindex(_pindex) {}
 
     bool performByteCode(dev::eth::Permanence type = dev::eth::Permanence::Committed);
 
@@ -1098,7 +1098,7 @@ private:
 
     dev::Address EthAddrFromScript(const CScript& scriptIn);
 
-    std::vector<QtumTransaction> txs;
+    std::vector<BCSTransaction> txs;
 
     std::vector<ResultExecute> result;
 

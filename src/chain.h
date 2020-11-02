@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -223,14 +225,14 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
-    uint256 hashStateRoot; // qtum
-    uint256 hashUTXORoot; // qtum
+    uint256 hashStateRoot; // bcs
+    uint256 hashUTXORoot; // bcs
     // block signature - proof-of-stake protect the block by signing the block using a stake holder private key
     std::vector<unsigned char> vchBlockSig;
     uint256 nStakeModifier;
     // proof-of-stake specific fields
     COutPoint prevoutStake;
-    uint256 hashProof; // qtum
+    uint256 hashProof; // bcs
     uint64_t nMoneySupply;
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
@@ -261,8 +263,8 @@ public:
         nTime          = 0;
         nBits          = 0;
         nNonce         = 0;
-        hashStateRoot  = uint256(); // qtum
-        hashUTXORoot   = uint256(); // qtum
+        hashStateRoot  = uint256(); // bcs
+        hashUTXORoot   = uint256(); // bcs
         vchBlockSig.clear();
         nStakeModifier = uint256();
         hashProof = uint256();
@@ -285,12 +287,12 @@ public:
         nBits          = block.nBits;
         nNonce         = block.nNonce;
         nMoneySupply   = 0;
-        hashStateRoot  = block.hashStateRoot; // qtum
-        hashUTXORoot   = block.hashUTXORoot; // qtum
+        hashStateRoot  = block.hashStateRoot; // bcs
+        hashUTXORoot   = block.hashUTXORoot; // bcs
         nStakeModifier = uint256();
         hashProof = uint256(); 
-        prevoutStake   = block.prevoutStake; // qtum
-        vchBlockSig    = block.vchBlockSig; // qtum
+        prevoutStake   = block.prevoutStake; // bcs
+        vchBlockSig    = block.vchBlockSig; // bcs
     }
 
     CDiskBlockPos GetBlockPos() const {
@@ -321,8 +323,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
-        block.hashStateRoot  = hashStateRoot; // qtum
-        block.hashUTXORoot   = hashUTXORoot; // qtum
+        block.hashStateRoot  = hashStateRoot; // bcs
+        block.hashUTXORoot   = hashUTXORoot; // bcs
         block.vchBlockSig    = vchBlockSig;
         block.prevoutStake   = prevoutStake;
         return block;
@@ -368,7 +370,7 @@ public:
         return pbegin[(pend - pbegin)/2];
     }
 
-    bool IsProofOfWork() const // qtum
+    bool IsProofOfWork() const // bcs
     {
         return !IsProofOfStake();
     }
@@ -464,12 +466,12 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        READWRITE(hashStateRoot); // qtum
-        READWRITE(hashUTXORoot); // qtum
+        READWRITE(hashStateRoot); // bcs
+        READWRITE(hashUTXORoot); // bcs
         READWRITE(nStakeModifier);
         READWRITE(prevoutStake);
         READWRITE(hashProof);
-        READWRITE(vchBlockSig); // qtum
+        READWRITE(vchBlockSig); // bcs
     }
 
     uint256 GetBlockHash() const
@@ -481,8 +483,8 @@ public:
         block.nTime           = nTime;
         block.nBits           = nBits;
         block.nNonce          = nNonce;
-        block.hashStateRoot   = hashStateRoot; // qtum
-        block.hashUTXORoot    = hashUTXORoot; // qtum
+        block.hashStateRoot   = hashStateRoot; // bcs
+        block.hashUTXORoot    = hashUTXORoot; // bcs
         block.vchBlockSig     = vchBlockSig;
         block.prevoutStake    = prevoutStake;
         return block.GetHash();

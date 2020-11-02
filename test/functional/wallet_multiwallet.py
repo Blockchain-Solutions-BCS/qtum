@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017-2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test multiwallet.
@@ -17,7 +19,7 @@ from test_framework.util import (
     assert_raises_rpc_error,
 )
 
-from test_framework.qtumconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
+from test_framework.bcsconfig import INITIAL_BLOCK_REWARD, COINBASE_MATURITY
 
 class MultiWalletTest(BitcoinTestFramework):
     def set_test_params(self):

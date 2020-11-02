@@ -57,7 +57,7 @@ CreateContract::CreateContract(const PlatformStyle *platformStyle, QWidget *pare
     m_ABIFunctionField = new ABIFunctionField(platformStyle, ABIFunctionField::Create, ui->scrollAreaConstructor);
     ui->scrollAreaConstructor->setWidget(m_ABIFunctionField);
     ui->labelBytecode->setToolTip(tr("The bytecode of the contract"));
-    ui->labelSenderAddress->setToolTip(tr("The quantum address that will be used to create the contract."));
+    ui->labelSenderAddress->setToolTip(tr("The BCS address that will be used to create the contract."));
 
     m_tabInfo = new TabBarInfo(ui->stackedWidget);
     m_tabInfo->addTab(0, tr("Create Contract"));
@@ -110,7 +110,7 @@ CreateContract::~CreateContract()
 void CreateContract::setLinkLabels()
 {
     ui->labelSolidity->setOpenExternalLinks(true);
-    ui->labelSolidity->setText("<a href=\"https://qmix.qtum.org/\">Solidity compiler</a>");
+    ui->labelSolidity->setText("<a href=\"https://remix.ethereum.org/\">" + tr("Solidity compiler") + "</a>");
 }
 
 void CreateContract::setModel(WalletModel *_model)
@@ -121,7 +121,7 @@ void CreateContract::setModel(WalletModel *_model)
     if (m_model && m_model->getOptionsModel())
         connect(m_model->getOptionsModel(), &OptionsModel::displayUnitChanged, this, &CreateContract::updateDisplayUnit);
 
-    // update the display unit, to not use the default ("QTUM")
+    // update the display unit, to not use the default ("BCS")
     updateDisplayUnit();
 }
 
@@ -208,7 +208,7 @@ void CreateContract::on_createContractClicked()
         ExecRPCCommand::appendParam(lstParams, PARAM_GASPRICE, BitcoinUnits::format(unit, gasPrice, false, BitcoinUnits::separatorNever));
         ExecRPCCommand::appendParam(lstParams, PARAM_SENDER, ui->lineEditSenderAddress->currentText());
 
-        QString questionString = tr("Are you sure you want to create contract? <br />");
+        QString questionString = tr("Are you sure you want to create contract?");
 
         SendConfirmationDialog confirmationDialog(tr("Confirm contract creation."), questionString, 3, this);
         confirmationDialog.exec();
@@ -239,7 +239,7 @@ void CreateContract::on_gasInfoChanged(quint64 blockGasLimit, quint64 minGasPric
 {
     Q_UNUSED(nGasPrice);
     ui->labelGasLimit->setToolTip(tr("Gas limit. Default = %1, Max = %2").arg(DEFAULT_GAS_LIMIT_OP_CREATE).arg(blockGasLimit));
-    ui->labelGasPrice->setToolTip(tr("Gas price: QTUM price per gas unit. Default = %1, Min = %2").arg(QString::fromStdString(FormatMoney(DEFAULT_GAS_PRICE))).arg(QString::fromStdString(FormatMoney(minGasPrice))));
+    ui->labelGasPrice->setToolTip(tr("Gas price: BCS price per gas unit. Default = %1, Min = %2").arg(QString::fromStdString(FormatMoney(DEFAULT_GAS_PRICE))).arg(QString::fromStdString(FormatMoney(minGasPrice))));
     ui->lineEditGasPrice->SetMinValue(minGasPrice);
     ui->lineEditGasLimit->setMaximum(blockGasLimit);
 }

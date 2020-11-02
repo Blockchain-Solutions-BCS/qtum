@@ -13,8 +13,8 @@ from struct import pack, unpack
 
 import http.client
 import urllib.parse
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
-from test_framework.qtum import convert_btc_address_to_qtum
+from test_framework.bcsconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.bcs import convert_btc_address_to_bcs
 
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import (
@@ -83,7 +83,7 @@ class RESTTest (BitcoinTestFramework):
         self.log.info("Mine blocks and send Bitcoin to node 1")
 
         # Random address so node1's balance doesn't increase
-        not_related_address = convert_btc_address_to_qtum("2MxqoHEdNQTyYeX1mHcbrrpzgojbosTpCvJ")
+        not_related_address = convert_btc_address_to_bcs("2MxqoHEdNQTyYeX1mHcbrrpzgojbosTpCvJ")
 
         self.nodes[0].generate(1)
         self.sync_all()

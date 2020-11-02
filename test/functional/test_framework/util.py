@@ -20,7 +20,7 @@ import time
 from . import coverage
 from .authproxy import AuthServiceProxy, JSONRPCException
 
-from .qtumconfig import COINBASE_MATURITY
+from .bcsconfig import COINBASE_MATURITY
 
 logger = logging.getLogger("TestFramework.utils")
 
@@ -294,7 +294,7 @@ def initialize_datadir(dirname, n):
     datadir = get_datadir_path(dirname, n)
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    with open(os.path.join(datadir, "qtum.conf"), 'w', encoding='utf8') as f:
+    with open(os.path.join(datadir, "bcs.conf"), 'w', encoding='utf8') as f:
         f.write("regtest=1\n")
         f.write("[regtest]\n")
         f.write("port=" + str(p2p_port(n)) + "\n")
@@ -319,8 +319,8 @@ def append_config(datadir, options):
 def get_auth_cookie(datadir):
     user = None
     password = None
-    if os.path.isfile(os.path.join(datadir, "qtum.conf")):
-        with open(os.path.join(datadir, "qtum.conf"), 'r', encoding='utf8') as f:
+    if os.path.isfile(os.path.join(datadir, "bcs.conf")):
+        with open(os.path.join(datadir, "bcs.conf"), 'r', encoding='utf8') as f:
             for line in f:
                 if line.startswith("rpcuser="):
                     assert user is None  # Ensure that there is only one rpcuser line

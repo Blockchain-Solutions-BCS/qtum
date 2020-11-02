@@ -1,5 +1,5 @@
 ---
-name: "qtum-dmg-signer"
+name: "bcs-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/qtumproject/qtum-detached-sigs.git"
+- "url": "https://github.com/cryptofugu/bcs-detached-sigs.git"
   "dir": "signature"
 files:
-- "qtum-osx-unsigned.tar.gz"
+- "bcs-osx-unsigned.tar.gz"
 script: |
   set -e -o pipefail
 
@@ -29,8 +29,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=qtum-osx-unsigned.tar.gz
-  SIGNED=qtum-osx-signed.dmg
+  UNSIGNED=bcs-osx-unsigned.tar.gz
+  SIGNED=bcs-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

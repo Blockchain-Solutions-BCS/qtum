@@ -52,7 +52,7 @@ from test_framework.script import (
 from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import assert_equal
 from data import invalid_txs
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 
 #  Use this class for tests that require behavior other than normal "mininode" behavior.
 #  For now, it is used to serialize a bloated varint (b64).
@@ -791,7 +791,7 @@ class FullBlockTest(BitcoinTestFramework):
         # not-fully-spent transaction in the same chain. To test, make identical coinbases;
         # the second one should be rejected.
         #
-        # QTUM: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
+        # BCS: Since we enable BIP34 from block 0, this BIP30 test is no longer relevant. This test has therefore been removed.
         #self.log.info("Reject a block with a transaction with a duplicate hash of a previous transaction (BIP30)")
         #self.move_tip(60)
         #b61 = self.next_block(61, spend=out[18])

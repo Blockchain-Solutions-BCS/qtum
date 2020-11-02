@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2017-2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,7 +13,7 @@ from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
 )
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 import json
 import os
 import time

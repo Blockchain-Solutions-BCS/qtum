@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # Copyright (c) 2015-2018 The Bitcoin Core developers
+# Copyright (c) 2017-2020 The Qtum Core developers
+# Copyright (c) 2020 The BCS Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test node responses to invalid transactions.
@@ -20,7 +22,7 @@ from test_framework.util import (
     wait_until,
 )
 from data import invalid_txs
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 
 
 class InvalidTxRequestTest(BitcoinTestFramework):

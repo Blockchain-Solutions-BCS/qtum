@@ -85,7 +85,7 @@ from test_framework.util import (
     Decimal,
     assert_raises_rpc_error,
 )
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 from test_framework.messages import COIN
 
 # The versionbit bit used to signal activation of SegWit

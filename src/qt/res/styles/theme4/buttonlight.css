@@ -1,0 +1,26 @@
+/*--------------------------------------------
+Button Blue CSS
+--------------------------------------------*/
+QPushButton {
+    color: #5a5a5d; 
+    background: #ffffff;
+    border-bottom: 1px solid #bababb;
+    border-radius: 12px;
+    min-width: 5em;
+    padding: 6px;
+    margin: 0px;
+}
+QPushButton:hover{
+    border: 1px solid #cdcdce;
+    color: #5a5a5d;
+}
+QPushButton:pressed {
+    background: #bdbdbe;
+    border: none;
+    color: #ffffff;
+}
+QPushButton::disabled {
+    background: #f7f7f7;
+    border: 1px solid #cdcdce;
+    color: #b3b3b4;
+}

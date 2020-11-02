@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,8 +13,8 @@
 #include <util/system.h>
 #include <util/strencodings.h>
 
-#include <qtum/qtumstate.h>
-#include <qtum/qtumtransaction.h>
+#include <bcs/bcsstate.h>
+#include <bcs/bcstransaction.h>
 #include <validation.h>
 #include <streams.h>
 
@@ -195,7 +197,7 @@ txnouttype Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned 
                 else
                     break;
             }
-            /////////////////////////////////////////////////////////// qtum
+            /////////////////////////////////////////////////////////// bcs
             else if (opcode2 == OP_VERSION)
             {
                 if(0 <= opcode1 && opcode1 <= OP_PUSHDATA4)
@@ -639,7 +641,7 @@ bool ExtractDestination(const COutPoint& prevout, const CScript& scriptPubKey, C
         return true;
     }
     else if (whichType == TX_CREATE) {
-        addressRet = CKeyID(uint160(QtumState::createQtumAddress(uintToh256(prevout.hash), prevout.n).asBytes()));
+        addressRet = CKeyID(uint160(BCSState::createBCSAddress(uintToh256(prevout.hash), prevout.n).asBytes()));
         return true;
     }
     return false;

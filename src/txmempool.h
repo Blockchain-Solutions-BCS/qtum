@@ -1,5 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2017-2020 The Qtum Core developers
+// Copyright (c) 2020 The BCS Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -52,7 +54,7 @@ struct LockPoints
 class CTxMemPool;
 
 #ifdef ENABLE_BITCORE_RPC
-//////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////// // bcs
 struct CSpentIndexKeyCompare
 {
     bool operator()(const CSpentIndexKey& a, const CSpentIndexKey& b) const {
@@ -695,7 +697,7 @@ private:
     txlinksMap mapLinks;
 
 #ifdef ENABLE_BITCORE_RPC
-    //////////////////////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////////////////////// // bcs
     typedef std::map<CMempoolAddressDeltaKey, CMempoolAddressDelta, CMempoolAddressDeltaKeyCompare> addressDeltaMap;
     addressDeltaMap mapAddress;
 
@@ -743,7 +745,7 @@ public:
     void addUnchecked(const CTxMemPoolEntry& entry, setEntries& setAncestors, bool validFeeEstimate = true) EXCLUSIVE_LOCKS_REQUIRED(cs, cs_main);
 
 #ifdef ENABLE_BITCORE_RPC
-    ///////////////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////////////// // bcs
     void addAddressIndex(const CTxMemPoolEntry &entry, const CCoinsViewCache &view);
     bool getAddressIndex(std::vector<std::pair<uint256, int> > &addresses,
                          std::vector<std::pair<CMempoolAddressDeltaKey, CMempoolAddressDelta> > &results);

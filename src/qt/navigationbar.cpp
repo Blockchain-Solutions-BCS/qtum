@@ -33,10 +33,10 @@ public:
         m_subBar(subBar),
         m_iconCached(false)
     {
-        m_colorEnabled = GetStringStyleValue("navtoolbutton/color-enabled", "#1a96ce");
-        m_colorPressed = GetStringStyleValue("navtoolbutton/color-pressed", "#e5f3f9");
-        m_colorHover = GetStringStyleValue("navtoolbutton/color-hover", "#b3dcef");
-        m_colorDisabled = GetStringStyleValue("navtoolbutton/color-disabled", "#7fc4e3");
+        m_colorEnabled = GetStringStyleValue("navtoolbutton/color-enabled", "#ffffff");
+        m_colorPressed = GetStringStyleValue("navtoolbutton/color-pressed", "#ffffff");
+        m_colorHover = GetStringStyleValue("navtoolbutton/color-hover", "#faede3");
+        m_colorDisabled = GetStringStyleValue("navtoolbutton/color-disabled", "#bb9f89");
         m_subIcon = QImage(GetStringStyleValue("navtoolbutton/sub-icon", ""));
         m_subPaddingRight = GetIntStyleValue("navtoolbutton/sub-padding-right", SubNavPaddingRight);
         m_subPaddingLeft = GetIntStyleValue("navtoolbutton/sub-padding-left", 0);

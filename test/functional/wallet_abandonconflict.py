@@ -21,7 +21,7 @@ from test_framework.util import (
     sync_blocks,
     sync_mempools,
 )
-from test_framework.qtumconfig import *
+from test_framework.bcsconfig import *
 
 class AbandonConflictTest(BitcoinTestFramework):
     def set_test_params(self):
