@@ -30,6 +30,34 @@ struct Vin{
     uint8_t alive;
 };
 
+class BCSTransactionReceipt: public dev::eth::TransactionReceipt {
+public:
+    BCSTransactionReceipt(
+        dev::h256 const& state_root, dev::h256 const& utxo_root,
+        dev::u256 const& gas_used, dev::eth::LogEntries const& log,
+        std::vector<std::pair<dev::Address, dev::bytes>>&& createdContracts,
+        std::vector<dev::Address>&& destructedContracts
+    ):
+        dev::eth::TransactionReceipt(state_root, gas_used, log),
+        m_utxoRoot(utxo_root),
+        m_createdContracts(std::move(createdContracts)),
+        m_destructedContracts(std::move(destructedContracts)) {}
+
+    dev::h256 const& utxoRoot() const {
+        return m_utxoRoot;
+    }
+    std::vector<std::pair<dev::Address, dev::bytes>> const& createdContracts() const {
+        return m_createdContracts;
+    }
+    std::vector<dev::Address> const& destructedContracts() const {
+        return m_destructedContracts;
+    }
+private:
+    dev::h256 m_utxoRoot;
+    std::vector<std::pair<dev::Address, dev::bytes>> m_createdContracts;
+    std::vector<dev::Address> m_destructedContracts;
+};
+
 struct ResultExecute{
     dev::eth::ExecutionResult execRes;
     dev::eth::TransactionReceipt txRec;
