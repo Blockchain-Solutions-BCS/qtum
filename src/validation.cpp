@@ -2296,10 +2296,10 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     ReadBlockFromDisk(block, pblockindex, Params().GetConsensus());
     block.nTime = GetAdjustedTime();
 
-    if(block.IsProofOfStake())
-    	block.vtx.erase(block.vtx.begin()+2,block.vtx.end());
+    if (block.IsProofOfStake())
+        block.vtx.erase(block.vtx.begin() + 2, block.vtx.end());
     else
-    	block.vtx.erase(block.vtx.begin()+1,block.vtx.end());
+        block.vtx.erase(block.vtx.begin() + 1, block.vtx.end());
 
     BCSDGP bcsDGP(globalState.get(), fGettingValuesDGP);
     uint64_t blockGasLimit = bcsDGP.getBlockGasLimit(pblockindex->nHeight + 1);

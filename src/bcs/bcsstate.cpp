@@ -35,6 +35,7 @@ ResultExecute BCSState::execute(EnvInfo const& _envInfo, SealEngineFace const& _
     m_destructedContracts.clear();
 
 	auto onOp = _onOp;
+
 #if ETH_VMTRACE
 	if (isChannelVisible<VMTraceChannel>())
 		onOp = Executive::simpleTrace(); // override tracer

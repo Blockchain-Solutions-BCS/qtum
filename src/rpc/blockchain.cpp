@@ -285,6 +285,7 @@ UniValue transactionReceiptToJSON(const BCSTransactionReceipt& txRec)
 {
     UniValue result(UniValue::VOBJ);
     result.pushKV("stateRoot", txRec.stateRoot().hex());
+    result.pushKV("utxoRoot", txRec.utxoRoot().hex());
     result.pushKV("gasUsed", CAmount(txRec.cumulativeGasUsed()));
     result.pushKV("bloom", txRec.bloom().hex());
     UniValue createdContracts(UniValue::VARR);
@@ -1297,33 +1298,33 @@ UniValue callcontract(const JSONRPCRequest& request)
                 },
                 RPCResult{
             "{\n"
-            "  \"address\": \"contract address\",             (string)  address of the contract\n"
-            "  \"executionResult\": {                       (object)  method execution result\n"
-            "    \"gasUsed\": n,                            (numeric) gas used\n"
-            "    \"excepted\": \"exception\",                 (string)  thrown exception\n"
-            "    \"newAddress\": \"contract address\",        (string)  new address of the contract\n"
-            "    \"output\": \"data\",                        (string)  returned data from the method\n"
-            "    \"codeDeposit\": n,                        (numeric) code deposit\n"
-            "    \"gasRefunded\": n,                        (numeric) gas refunded\n"
-            "    \"depositSize\": n,                        (numeric) deposit size\n"
-            "    \"gasForDeposit\": n                       (numeric) gas for deposit\n"
-            "  },\n"
-            "  \"transactionReceipt\": {                    (object)  transaction receipt\n"
-            "    \"stateRoot\": \"hash\",                     (string)  state root hash\n"
-            "    \"gasUsed\": n,                            (numeric) gas used\n"
-            "    \"bloom\": \"bloom\",                        (string)  bloom\n"
-            "    \"log\": [                                 (array)  logs from the receipt\n"
-            "      {\n"
-            "        \"address\": \"address\",                (string)  contract address\n"
-            "        \"topics\":                            (array)  topics\n"
-            "        [\n"
-            "          \"topic\",                           (string)  topic\n"
-            "        ],\n"
-            "        \"data\": \"data\"                       (string)  logged data\n"
-            "      }\n"
-            "    ]\n"
-            "  }\n"
-            "}\n"
+                    "  \"address\": \"contract address\",             (string)  address of the contract\n"
+                    "  \"executionResult\": {                       (object)  method execution result\n"
+                    "    \"gasUsed\": n,                            (numeric) gas used\n"
+                    "    \"excepted\": \"exception\",                 (string)  thrown exception\n"
+                    "    \"newAddress\": \"contract address\",        (string)  new address of the contract\n"
+                    "    \"output\": \"data\",                        (string)  returned data from the method\n"
+                    "    \"codeDeposit\": n,                        (numeric) code deposit\n"
+                    "    \"gasRefunded\": n,                        (numeric) gas refunded\n"
+                    "    \"depositSize\": n,                        (numeric) deposit size\n"
+                    "    \"gasForDeposit\": n                       (numeric) gas for deposit\n"
+                    "  },\n"
+                    "  \"transactionReceipt\": {                    (object)  transaction receipt\n"
+                    "    \"stateRoot\": \"hash\",                     (string)  state root hash\n"
+                    "    \"gasUsed\": n,                            (numeric) gas used\n"
+                    "    \"bloom\": \"bloom\",                        (string)  bloom\n"
+                    "    \"log\": [                                 (array)  logs from the receipt\n"
+                    "      {\n"
+                    "        \"address\": \"address\",                (string)  contract address\n"
+                    "        \"topics\":                            (array)  topics\n"
+                    "        [\n"
+                    "          \"topic\",                           (string)  topic\n"
+                    "        ],\n"
+                    "        \"data\": \"data\"                       (string)  logged data\n"
+                    "      }\n"
+                    "    ]\n"
+                    "  }\n"
+                    "}\n"},
                 },
                 RPCExamples{
                     HelpExampleCli("callcontract", "eb23c0b3e6042821da281a2e2364feb22dd543e3 06fdde03") + HelpExampleRpc("callcontract", "eb23c0b3e6042821da281a2e2364feb22dd543e3 06fdde03")},
@@ -2065,6 +2066,7 @@ UniValue getblocktransactionreceipts(const JSONRPCRequest& request)
 
     return result;
 }
+
 //////////////////////////////////////////////////////////////////////
 
 UniValue listcontracts(const JSONRPCRequest& request)
@@ -3597,7 +3599,11 @@ static const CRPCCommand commands[] =
     { "blockchain",         "listcontracts",          &listcontracts,          {"start", "maxDisplay"} },
     { "blockchain",         "listallcontracts",       &listallcontracts,       {"height"} },
     { "blockchain",         "gettransactionreceipt",  &gettransactionreceipt,  {"hash"} },
+<<<<<<< HEAD
     { "blockchain",         "getblocktransactionreceipts",  &getblocktransactionreceipts,  {"hash"} },
+=======
+    { "blockchain",         "getblocktransactionreceipts", &getblocktransactionreceipts, {"hash"} },
+>>>>>>> 8ab00bc08058039cd93108135456b71fb6e0ec41
     { "blockchain",         "searchlogs",             &searchlogs,             {"fromBlock", "toBlock", "address", "topics"} },
 
     { "blockchain",         "waitforlogs",            &waitforlogs,            {"fromBlock", "nblocks", "address", "topics"} },
