@@ -2280,10 +2280,19 @@ bool CheckSenderScript(const CCoinsViewCache& view, const CTransaction& tx){
 }
 
 std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, const dev::Address& sender, uint64_t gasLimit){
+    CBlockIndex* pblockindex = mapBlockIndex[chainActive.Tip()->GetBlockHash()];
+    return CallContract(addrContract, opcode, pblockindex, sender, gasLimit);
+}
+
+std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, int blockHeight, const dev::Address& sender, uint64_t gasLimit){
+    CBlockIndex* pblockindex = mapBlockIndex[chainActive[blockHeight]->GetBlockHash()];
+    return CallContract(addrContract, opcode, pblockindex, sender, gasLimit);
+}
+
+std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::vector<unsigned char> opcode, CBlockIndex* pblockindex, const dev::Address& sender, uint64_t gasLimit) {
     CBlock block;
     CMutableTransaction tx;
 
-    CBlockIndex* pblockindex = mapBlockIndex[chainActive.Tip()->GetBlockHash()];
     ReadBlockFromDisk(block, pblockindex, Params().GetConsensus());
     block.nTime = GetAdjustedTime();
 
@@ -2293,7 +2302,7 @@ std::vector<ResultExecute> CallContract(const dev::Address& addrContract, std::v
     	block.vtx.erase(block.vtx.begin()+1,block.vtx.end());
 
     BCSDGP bcsDGP(globalState.get(), fGettingValuesDGP);
-    uint64_t blockGasLimit = bcsDGP.getBlockGasLimit(chainActive.Tip()->nHeight + 1);
+    uint64_t blockGasLimit = bcsDGP.getBlockGasLimit(pblockindex->nHeight + 1);
 
     if(gasLimit == 0){
         gasLimit = blockGasLimit - 1;
@@ -2543,7 +2552,11 @@ bool ByteCodeExec::performByteCode(dev::eth::Permanence type){
         if(!tx.isCreation() && !globalState->addressInUse(tx.receiveAddress())){
             dev::eth::ExecutionResult execRes;
             execRes.excepted = dev::eth::TransactionException::Unknown;
-            result.push_back(ResultExecute{execRes, dev::eth::TransactionReceipt(dev::h256(), dev::u256(), dev::eth::LogEntries()), CTransaction()});
+            result.push_back(ResultExecute{
+                execRes,
+                BCSTransactionReceipt(dev::h256(), dev::h256(), dev::u256(), dev::eth::LogEntries(), {}, {}),
+                CTransaction()
+            });
             continue;
         }
         result.push_back(globalState->execute(envInfo, *globalSealEngine.get(), tx, type, OnOpFunc()));
@@ -3213,6 +3226,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                         uint32_t(pindex->nHeight),
                         tx.GetHash(),
                         uint32_t(i),
+                        resultConvertBCSTX.first[k].getNVout(),
                         resultConvertBCSTX.first[k].from(),
                         resultConvertBCSTX.first[k].to(),
                         countCumulativeGasUsed,
@@ -3221,7 +3235,10 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
                         resultExec[k].txRec.log(),
                         resultExec[k].execRes.excepted,
                         exceptedMessage(resultExec[k].execRes.excepted, resultExec[k].execRes.output),
-                        resultConvertBCSTX.first[k].getNVout()
+                        resultExec[k].txRec.stateRoot(),
+                        resultExec[k].txRec.utxoRoot(),
+                        resultExec[k].txRec.createdContracts(),
+                        resultExec[k].txRec.destructedContracts()
                     });
                 }
 
